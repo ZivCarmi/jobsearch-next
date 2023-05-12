@@ -1,0 +1,7 @@
+.errors {
+  margin-bottom: 2rem;
+  border: 1px solid hsl(6 87% 78%);
+  background-color: hsl(6 87% 88%);
+  padding: 1rem;
+  border-radius: 4px;
+}

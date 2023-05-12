@@ -1,0 +1,34 @@
+.grid {
+  gap: 1rem;
+}
+
+.link {
+  display: block;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.status {
+  text-transform: capitalize;
+}
+
+.isUpdated {
+  outline: 1px solid var(--purple);
+  padding: 0.2rem;
+  font-size: 0.75rem;
+  color: var(--purple);
+}
+
+.date {
+  justify-content: flex-start;
+}
+
+.actions button,
+.actions a {
+  position: relative;
+  z-index: 1;
+}

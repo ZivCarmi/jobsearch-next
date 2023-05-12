@@ -1,0 +1,12 @@
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.date svg {
+  color: lightgray;
+  font-size: 1rem;
+}

@@ -1,0 +1,29 @@
+.card {
+  width: 100%;
+  margin: auto;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.card > * {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1.6rem;
+  padding-left: 1.6rem;
+}
+
+.header {
+  border-bottom: 1px solid lightgray;
+  font-size: 1.25rem;
+}
+
+.body {
+  overflow: auto;
+  /* min-height: 50vh; */
+  max-height: 75vh;
+}
+
+.footer {
+  text-align: right;
+  border-top: 1px solid lightgray;
+}

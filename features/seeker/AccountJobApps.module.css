@@ -1,0 +1,25 @@
+.grid {
+  gap: 1rem;
+}
+
+.link {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--purple-2nd);
+  border-radius: 4px;
+}
+
+.head {
+  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.status {
+  text-transform: capitalize;
+}
+
+.date {
+  margin-left: auto;
+}

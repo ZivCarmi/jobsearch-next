@@ -1,0 +1,48 @@
+.file {
+  background-color: var(--purple);
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+}
+
+.selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 60px;
+}
+
+.selectedFile {
+  position: absolute;
+  padding: 0 40px;
+}
+
+.remove {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.label:hover {
+  background-color: var(--purple-2nd);
+}
+
+.label input {
+  display: none;
+}

@@ -1,0 +1,9 @@
+.link {
+  background-color: var(--purple);
+  color: white;
+  transition: all 0.25s ease-in-out;
+}
+
+.link:hover {
+  background-color: var(--purple-2nd);
+}

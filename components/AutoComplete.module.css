@@ -1,0 +1,21 @@
+.autoComplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 12px;
+}
+
+.autoComplete button {
+  background-color: transparent;
+  border: none;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  text-align: left;
+}
+
+.autoComplete button:hover {
+  background-color: var(--purple-3rd);
+  color: var(--purple);
+}

@@ -1,0 +1,15 @@
+.userType {
+  margin-bottom: 2rem;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.actions button {
+  width: 100%;
+  height: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+}

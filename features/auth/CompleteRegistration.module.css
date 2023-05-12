@@ -1,0 +1,53 @@
+.card {
+  max-width: 700px;
+}
+
+.form {
+  width: 100%;
+  padding: 1rem;
+}
+
+.intro {
+  white-space: pre-wrap;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.globalErrors {
+  margin: 2rem 0 0;
+}
+
+.formBody {
+  margin: 2rem 0;
+}
+
+.actions {
+  text-align: right;
+  /* display: flex;
+  justify-content: space-between; */
+  margin-top: 2rem;
+}
+
+.actions .skip {
+  border: none;
+  background-color: transparent;
+  color: #ccc;
+  font-size: 0.875rem;
+  margin-right: 1.5rem;
+}
+
+.actions button[type="submit"] {
+  margin-left: auto;
+  max-width: 140px;
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  background-color: var(--orange);
+  border: none;
+  border-radius: 25px;
+}
+
+.actions button[type="submit"]:disabled {
+  background-color: var(--orange-disabled);
+  cursor: not-allowed;
+}

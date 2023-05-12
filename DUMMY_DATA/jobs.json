@@ -1,0 +1,288 @@
+[
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Full Stack Web Developer",
+    "location": "Netherlands",
+    "description": "Morbi sit amet nunc tristique, tempor libero a, rutrum velit. Sed mollis porttitor massa at fringilla. Aliquam ornare lectus enim, id pharetra arcu porta ut. Nulla sollicitudin luctus orci in aliquet. Phasellus eget purus mi. Etiam commodo vel leo non efficitur. Nullam et rutrum mi. Nunc porta erat est, eu pretium nibh mattis id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean faucibus, augue vel eleifend bibendum, sem lorem gravida justo, eleifend fringilla massa nisl non est.",
+    "type": "Full time",
+    "createdAt": "2023-03-30T09:52:07.318+00:00",
+    "updatedAt": "2023-03-30T09:52:07.318+00:00"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "UI/UX Designer",
+    "location": "Spain",
+    "description": "Pellentesque ut lectus nisl. Pellentesque semper nulla nec velit venenatis tempus. Integer rhoncus facilisis est id molestie. Praesent in lobortis lorem, quis congue ipsum.",
+    "type": "Half time",
+    "createdAt": "2023-03-27T09:52:07.318+00:00",
+    "updatedAt": "2023-03-27T09:52:07.318+00:00"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Software Engineer",
+    "location": "Austria",
+    "description": "Aliquam a quam nec libero lacinia semper a non elit. Nullam vehicula est ligula. Sed luctus, ipsum vitae elementum aliquam, erat mauris venenatis ante, sit amet pharetra mauris velit ac augue. Nam in elit porta dolor ullamcorper elementum. Phasellus luctus ligula eu arcu semper bibendum.",
+    "type": "Hybrid",
+    "createdAt": "2023-03-20T09:52:07.318+00:00",
+    "updatedAt": "2023-03-20T09:52:07.318+00:00"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Software Engineer",
+    "description": "We are seeking a highly motivated software engineer to join our team. The ideal candidate will have experience with web development and be proficient in JavaScript, HTML, and CSS.",
+    "location": "San Francisco, CA",
+    "salary": "$100,000 - $120,000 per year",
+    "createdAt": "2021-07-15T14:30:00.000Z",
+    "updatedAt": "2022-11-20T10:45:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Marketing Manager",
+    "description": "We are looking for an experienced marketing manager to lead our team. The ideal candidate will have a proven track record of developing successful marketing strategies and be able to manage a team of marketing professionals.",
+    "location": "New York, NY",
+    "salary": "$90,000 - $110,000 per year",
+    "createdAt": "2022-01-03T08:15:00.000Z",
+    "updatedAt": "2022-10-30T16:20:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Accountant",
+    "description": "We are seeking a highly organized and detail-oriented accountant to join our team. The ideal candidate will have a strong understanding of accounting principles and be able to manage multiple accounts simultaneously.",
+    "location": "Chicago, IL",
+    "salary": "$70,000 - $90,000 per year",
+    "createdAt": "2021-12-01T13:00:00.000Z",
+    "updatedAt": "2022-09-05T18:30:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "UX Designer",
+    "description": "We are seeking a talented UX Designer to join our team. The ideal candidate will have a strong portfolio of work and be able to design and develop user-friendly interfaces for our web and mobile applications.",
+    "location": "Seattle, WA",
+    "salary": "$80,000 - $100,000 per year",
+    "createdAt": "2021-05-25T09:30:00.000Z",
+    "updatedAt": "2022-12-10T14:45:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Data Analyst",
+    "description": "We are seeking a detail-oriented Data Analyst to join our team. The ideal candidate will have experience with data analysis and visualization tools, and be able to provide insights and recommendations based on data-driven insights.",
+    "location": "Los Angeles, CA",
+    "salary": "$60,000 - $80,000 per year",
+    "createdAt": "2022-02-20T11:00:00.000Z",
+    "updatedAt": "2022-08-15T12:30:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Sales Representative",
+    "description": "We are seeking a Sales Representative to help us expand our business. The ideal candidate will have a proven track record of achieving sales targets and be able to communicate effectively with clients and prospects.",
+    "location": "Boston, MA",
+    "salary": "$50,000 - $70,000 per year",
+    "createdAt": "2021-09-01T16:45:00.000Z",
+    "updatedAt": "2022-10-20T09:15:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Graphic Designer",
+    "description": "We are looking for a talented graphic designer to create stunning visuals and graphics for our website and marketing campaigns. The ideal candidate will have experience with Adobe Creative Suite and a strong portfolio of work.",
+    "location": "Austin, TX",
+    "salary": "$60,000 - $80,000 per year",
+    "createdAt": "2021-10-10T09:00:00.000Z",
+    "updatedAt": "2022-12-15T14:30:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Human Resources Manager",
+    "description": "We are seeking an experienced Human Resources Manager to lead our HR department. The ideal candidate will have knowledge of HR policies and procedures, and be able to manage a team of HR professionals.",
+    "location": "Washington, D.C.",
+    "salary": "$100,000 - $120,000 per year",
+    "createdAt": "2022-03-20T12:00:00.000Z",
+    "updatedAt": "2022-11-25T11:30:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Software Architect",
+    "description": "We are looking for a Software Architect to lead the design and development of our software systems. The ideal candidate will have experience with software development lifecycle and be proficient in at least one programming language.",
+    "location": "Denver, CO",
+    "salary": "$120,000 - $140,000 per year",
+    "createdAt": "2021-08-05T13:30:00.000Z",
+    "updatedAt": "2022-09-30T15:45:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Customer Service Representative",
+    "description": "We are seeking a Customer Service Representative to help us provide excellent service to our clients. The ideal candidate will have strong communication skills and be able to handle customer inquiries and complaints.",
+    "location": "Miami, FL",
+    "salary": "$30,000 - $40,000 per year",
+    "createdAt": "2022-01-10T10:15:00.000Z",
+    "updatedAt": "2022-07-20T17:00:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Content Writer",
+    "description": "We are seeking a talented Content Writer to create engaging and informative content for our website and marketing campaigns. The ideal candidate will have experience with SEO and content marketing strategies.",
+    "location": "Portland, OR",
+    "salary": "$50,000 - $70,000 per year",
+    "createdAt": "2021-11-15T08:30:00.000Z",
+    "updatedAt": "2022-10-10T13:15:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Marketing Manager",
+    "description": "We are looking for an experienced Marketing Manager to lead our marketing department. The ideal candidate will have a deep understanding of marketing strategies, and be able to develop and execute successful marketing campaigns.",
+    "location": "New York, NY",
+    "salary": "$100,000 - $120,000 per year",
+    "createdAt": "2021-12-15T14:30:00.000Z",
+    "updatedAt": "2022-11-30T16:00:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Sales Representative",
+    "description": "We are seeking a Sales Representative to help us expand our customer base. The ideal candidate will have experience in sales and a proven track record of meeting or exceeding sales targets.",
+    "location": "Chicago, IL",
+    "salary": "$50,000 - $80,000 per year",
+    "createdAt": "2022-02-20T09:30:00.000Z",
+    "updatedAt": "2022-10-15T11:45:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Front-end Developer",
+    "description": "We are looking for a talented Front-end Developer to create beautiful and responsive user interfaces. The ideal candidate will have experience with HTML, CSS, JavaScript and popular front-end frameworks such as React or Angular.",
+    "location": "San Francisco, CA",
+    "salary": "$90,000 - $110,000 per year",
+    "createdAt": "2021-09-10T11:00:00.000Z",
+    "updatedAt": "2022-12-01T14:00:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Operations Manager",
+    "description": "We are seeking an Operations Manager to oversee our day-to-day operations. The ideal candidate will have experience with operations management and be able to identify and implement process improvements.",
+    "location": "Seattle, WA",
+    "salary": "$80,000 - $100,000 per year",
+    "createdAt": "2022-01-05T13:45:00.000Z",
+    "updatedAt": "2022-11-15T16:30:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Data Analyst",
+    "description": "We are looking for a Data Analyst to help us make data-driven decisions. The ideal candidate will have experience with data analysis tools such as Excel or Tableau, and be able to communicate insights to non-technical stakeholders.",
+    "location": "Boston, MA",
+    "salary": "$70,000 - $90,000 per year",
+    "createdAt": "2021-10-20T10:30:00.000Z",
+    "updatedAt": "2022-09-01T12:15:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Product Manager",
+    "description": "We are seeking an experienced Product Manager to lead the development of our products. The ideal candidate will have a deep understanding of product management principles and be able to work closely with cross-functional teams.",
+    "location": "Los Angeles, CA",
+    "salary": "$120,000 - $140,000 per year",
+    "createdAt": "2022-02-10T15:00:00.000Z",
+    "updatedAt": "2022-12-05T17:30:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Full-stack Developer",
+    "description": "We are looking for a Full-stack Developer to join our team. The ideal candidate will have experience with both front-end and back-end development, as well as proficiency in popular programming languages such as JavaScript, Python or Ruby.",
+    "location": "Austin, TX",
+    "salary": "$100,000 - $120,000 per year",
+    "createdAt": "2022-03-10T09:00:00.000Z",
+    "updatedAt": "2022-11-15T12:30:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Back-end Developer",
+    "description": "We are seeking a Back-end Developer to work on our server-side applications. The ideal candidate will have experience with server-side languages such as Java, Python or PHP, as well as proficiency in database management.",
+    "location": "Washington, DC",
+    "salary": "$90,000 - $110,000 per year",
+    "createdAt": "2021-11-20T10:15:00.000Z",
+    "updatedAt": "2022-10-01T14:45:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "React Developer",
+    "description": "We are looking for a React Developer to work on our front-end applications. The ideal candidate will have experience with React and Redux, as well as proficiency in front-end development technologies such as HTML, CSS and JavaScript.",
+    "location": "San Diego, CA",
+    "salary": "$80,000 - $100,000 per year",
+    "createdAt": "2022-01-15T13:30:00.000Z",
+    "updatedAt": "2022-11-20T16:00:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Mobile Developer",
+    "description": "We are seeking a Mobile Developer to work on our mobile applications. The ideal candidate will have experience with mobile development technologies such as React Native or Swift, as well as proficiency in front-end development technologies such as HTML, CSS and JavaScript.",
+    "location": "Miami, FL",
+    "salary": "$90,000 - $110,000 per year",
+    "createdAt": "2022-02-05T14:00:00.000Z",
+    "updatedAt": "2022-12-10T15:30:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "DevOps Engineer",
+    "description": "We are looking for a DevOps Engineer to help us automate and streamline our operations. The ideal candidate will have experience with cloud infrastructure such as AWS or Azure, as well as proficiency in scripting languages such as Python or Bash.",
+    "location": "Denver, CO",
+    "salary": "$110,000 - $130,000 per year",
+    "createdAt": "2021-12-10T11:45:00.000Z",
+    "updatedAt": "2022-11-05T13:15:00.000Z"
+  },
+  {
+    "employer": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "title": "Front-end Engineer",
+    "description": "We are seeking a Front-end Engineer to work on our user-facing applications. The ideal candidate will have experience with front-end technologies such as HTML, CSS, JavaScript and React, as well as proficiency in design tools such as Sketch or Figma.",
+    "location": "Portland, OR",
+    "salary": "$80,000 - $100,000 per year",
+    "createdAt": "2022-02-10T15:00:00.000Z",
+    "updatedAt": "2022-12-05T17:30:00.000Z"
+  }
+]

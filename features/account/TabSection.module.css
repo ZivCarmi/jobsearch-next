@@ -1,0 +1,10 @@
+.tabSection h3 {
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  color: var(--purple);
+  padding-bottom: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}

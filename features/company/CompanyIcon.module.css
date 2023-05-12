@@ -1,0 +1,13 @@
+.icon {
+  width: 32px;
+}
+
+.customIcon {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 4px;
+  color: white;
+}

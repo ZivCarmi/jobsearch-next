@@ -1,0 +1,31 @@
+.search {
+  background-color: hsl(254 76% 16% / 1);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  color: white;
+}
+
+.search h1 {
+  font-size: 3rem;
+  margin: 0 0 1.4rem;
+  color: hsl(254 76% 85%);
+}
+
+.search h1 span {
+  color: white;
+}
+
+.careerAdvice .heading {
+  margin-bottom: 2rem;
+}
+
+.careerAdvice h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.careerAdvice .browse {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}

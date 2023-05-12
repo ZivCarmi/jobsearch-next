@@ -1,0 +1,110 @@
+.card {
+  /* max-width: 768px;
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+  padding: 2rem;
+}
+
+.heading {
+  display: flex;
+}
+
+.heading .left {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+}
+
+.companyName {
+  color: var(--purple);
+}
+
+.companyLocation {
+  color: #707070;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.body {
+  margin-top: 2rem;
+}
+
+.bodySection {
+  margin-top: 1.2rem;
+}
+
+.bodySection h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.cardData > * {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.bodySection:not(:last-child),
+.cardData > *:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
+
+.cardData .title {
+  font-weight: 500;
+}
+
+.cardData .subtitle {
+  font-weight: 500;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jobType ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.jobType li {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  /* border: 1px solid lightgray; */
+  outline: 1px solid lightgray;
+}
+
+.description .section:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.rawData {
+  margin-top: 1rem;
+}
+
+.website a {
+  text-decoration: underline;
+  transition: 0.2s ease-in-out;
+}
+
+.website a:hover {
+  color: var(--purple);
+}

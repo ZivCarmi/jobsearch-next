@@ -1,0 +1,38 @@
+.title {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.formSection {
+  margin-bottom: 3rem;
+}
+
+.company {
+  padding: 1.5rem 2rem;
+  box-shadow: rgba(86 43 226 / 0.2) 0px 0px 10px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.company .icon {
+  width: 60px;
+  height: 60px;
+}
+
+.companyName {
+  font-size: 1.6rem;
+  letter-spacing: 0.8px;
+}
+
+.controlGroup {
+  display: grid;
+  gap: 2rem;
+}
+
+.actions {
+  text-align: right;
+}

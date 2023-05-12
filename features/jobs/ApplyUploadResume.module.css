@@ -1,0 +1,37 @@
+.formBody {
+  padding: 0 2rem 2rem;
+  text-align: center;
+}
+
+.title {
+  margin-top: -0.5rem;
+}
+
+.description {
+  margin: 1rem 0;
+}
+
+.file {
+  background-color: var(--purple);
+  color: white;
+  font-weight: 500;
+}
+
+.file label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.file label:hover {
+  background-color: var(--purple-2nd);
+}
+
+.file input {
+  display: none;
+}

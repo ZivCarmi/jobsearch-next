@@ -1,0 +1,26 @@
+[
+  {
+    "_id": {
+      "$oid": "644156895c82e2c394a0511d"
+    },
+    "__v": 0,
+    "company": {
+      "name": "The Guys",
+      "size": "up50",
+      "country": "ASM",
+      "websiteUrl": "https://theguys.com",
+      "_id": {
+        "$oid": "644157195c82e2c394a05130"
+      }
+    },
+    "createdAt": {
+      "$date": "2023-04-20T15:14:19.372Z"
+    },
+    "firstName": "das",
+    "jobs": [],
+    "lastName": "ff",
+    "updatedAt": {
+      "$date": "2023-04-20T15:15:37.796Z"
+    }
+  }
+]

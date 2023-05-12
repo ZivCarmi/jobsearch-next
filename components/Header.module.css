@@ -1,0 +1,30 @@
+.unverifiedStrip {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  text-align: center;
+  background-color: var(--purple-3rd);
+  height: var(--unverified-strip-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unverifiedStrip a {
+  color: var(--purple-2nd);
+  text-decoration: underline;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.header.unverified {
+  top: var(--unverified-strip-height);
+}

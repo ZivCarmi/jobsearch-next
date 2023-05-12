@@ -1,0 +1,20 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description {
+  margin-bottom: 1rem;
+}
+
+.grid {
+  gap: 1rem;
+}
+
+.link {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--purple-2nd);
+  border-radius: 4px;
+}

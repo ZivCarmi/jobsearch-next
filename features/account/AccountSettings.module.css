@@ -1,0 +1,13 @@
+.table th {
+  text-align: left;
+  font-weight: 500;
+  padding: 0 0 2rem;
+}
+
+.table td {
+  padding: 0 3rem 2rem;
+}
+
+.table .type {
+  text-transform: capitalize;
+}

@@ -1,0 +1,22 @@
+.section {
+  line-height: 1.7;
+}
+
+.section:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin-bottom: 0.6rem;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  font-weight: 500;
+}

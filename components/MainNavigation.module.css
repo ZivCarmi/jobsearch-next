@@ -1,0 +1,33 @@
+.navigation {
+  background-color: lightgray;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  height: var(--navigation-height);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 3rem;
+}
+
+.navigation ul a {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navigation a:hover {
+  color: var(--purple);
+}
+
+.hiring a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}

@@ -1,0 +1,23 @@
+.group {
+  display: grid;
+  gap: 3rem;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions button {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  background-color: var(--orange);
+  margin-top: 1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.875rem;
+}
+
+.actions button:disabled {
+  background-color: var(--orange-disabled);
+}

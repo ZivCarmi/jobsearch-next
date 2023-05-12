@@ -1,0 +1,13 @@
+.card {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 4rem 2.5rem;
+  position: relative;
+}
+
+.title {
+  margin-bottom: 2rem;
+  color: var(--purple);
+  font-size: 1.8rem;
+}

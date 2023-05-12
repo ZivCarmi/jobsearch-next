@@ -1,0 +1,47 @@
+.tables {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+  padding-top: 60px;
+}
+
+.headerTable {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.headerTable th {
+  font-size: 1.125rem;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.4;
+  background-color: var(--purple);
+  padding: 18px 1rem 18px 0;
+  text-align: left;
+}
+
+.headerTable th:first-child,
+.bodyTable td:first-of-type {
+  padding-left: 2rem;
+}
+
+.bodyTable {
+  max-height: 585px;
+  overflow: auto;
+}
+
+.bodyTable tr {
+  position: relative;
+}
+
+.bodyTable td {
+  padding: 1rem 1rem 1rem 0;
+}
+
+.bodyTable tr:nth-child(even) {
+  background-color: var(--purple-3rd);
+}

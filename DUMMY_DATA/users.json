@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "644144325c82e2c394a05087"
+  },
+  "type": "seeker",
+  "email": "seeker@gmail.com",
+  "password": "$2b$10$mIra.pf7jdfOfHTUQEc1mexO9v/TP8ep2yrlnFRXB8n0EWiZSiS3q",
+  "verified": true,
+  "createdAt": {
+    "$date": "2023-04-20T13:54:58.626Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-20T13:55:50.865Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "type": "employer",
+  "email": "employer@gmail.com",
+  "password": "$2b$10$ih.GjOfV6DUSSGn8./Qi8eKbiwoFlUlLjk.HZWpQWE3FpIsB06Mqy",
+  "verified": true,
+  "createdAt": {
+    "$date": "2023-04-20T15:13:13.580Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-20T15:15:37.862Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,22 @@
+.head {
+  line-height: 2.5;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status {
+  text-transform: capitalize;
+}
+
+.updatedAt {
+  color: var(--gray-subtle);
+}
+
+.applied {
+  color: #38c138;
+  font-weight: 500;
+}

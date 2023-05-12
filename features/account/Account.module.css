@@ -1,0 +1,37 @@
+.title {
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 3rem;
+}
+
+.tabsNav {
+  margin-top: 1rem;
+}
+
+.tabsNav a {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.tabsNav a:hover {
+  color: var(--purple);
+}
+
+.tabsNav li a.active {
+  color: var(--purple);
+  background-color: var(--purple-3rd);
+}
+
+.tabsContent {
+  flex-grow: 1;
+}

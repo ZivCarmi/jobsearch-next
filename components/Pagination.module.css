@@ -1,0 +1,15 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.pageItem {
+  color: var(--purple);
+}
+
+.pageActive {
+  font-weight: 700;
+}
