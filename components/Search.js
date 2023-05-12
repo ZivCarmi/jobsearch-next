@@ -1,6 +1,5 @@
 import { useCallback, useRef, useState } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
-// import { Form, useSubmit } from "react-router-dom";
 
 import AutoComplete from "./AutoComplete";
 
