@@ -1,0 +1,14 @@
+.searchResults {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 12px;
+  padding: 3rem;
+}
+
+.searchResults h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.searchResults span {
+  color: var(--orange);
+  text-transform: capitalize;
+}

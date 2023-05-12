@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import Jobs from "@/features/jobs/Jobs";
 import SearchTitle from "@/features/jobs/SearchTitle";
 
-import classes from "./JobsSearch.module.css";
+import classes from "./Search.module.css";
 
 const SearchPage = () => {
   console.log("in SearchPage");
@@ -24,51 +24,51 @@ const SearchPage = () => {
 
 export default SearchPage;
 
-const loadSearchedJobs = async (request, params) => {
-  console.log("in search loader");
+// const loadSearchedJobs = async (request, params) => {
+//   console.log("in search loader");
 
-  if (params.jobId) return [];
+//   if (params.jobId) return [];
 
-  const urlParams = new URL(request.url).searchParams;
+//   const urlParams = new URL(request.url).searchParams;
 
-  const jobParam = urlParams.get("job");
-  const whereParam = urlParams.get("where");
+//   const jobParam = urlParams.get("job");
+//   const whereParam = urlParams.get("where");
 
-  const searchData = {};
+//   const searchData = {};
 
-  if (jobParam) {
-    searchData.job = jobParam;
-  }
+//   if (jobParam) {
+//     searchData.job = jobParam;
+//   }
 
-  if (whereParam) {
-    searchData.where = whereParam;
-  }
+//   if (whereParam) {
+//     searchData.where = whereParam;
+//   }
 
-  if (Object.keys(searchData).length === 0) return [];
+//   if (Object.keys(searchData).length === 0) return [];
 
-  searchData.page = urlParams.get("page") || 1;
+//   searchData.page = urlParams.get("page") || 1;
 
-  try {
-    const response = await fetch(
-      `http://localhost:5000/jobs/search/?${new URLSearchParams(searchData)}`
-    );
+//   try {
+//     const response = await fetch(
+//       `http://localhost:5000/jobs/search/?${new URLSearchParams(searchData)}`
+//     );
 
-    if (!response.ok) {
-      return response;
-    }
+//     if (!response.ok) {
+//       return response;
+//     }
 
-    const results = await response.json();
+//     const results = await response.json();
 
-    return results;
-  } catch (error) {
-    console.error(error);
-  }
+//     return results;
+//   } catch (error) {
+//     console.error(error);
+//   }
 
-  return [];
-};
+//   return [];
+// };
 
-export const loader = async ({ request, params }) => {
-  return defer({
-    results: loadSearchedJobs(request, params),
-  });
-};
+// export const loader = async ({ request, params }) => {
+//   return defer({
+//     results: loadSearchedJobs(request, params),
+//   });
+// };
