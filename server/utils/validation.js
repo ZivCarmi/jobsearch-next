@@ -1,4 +1,9 @@
-import { availableJobTypes, availableSalaryTypes } from "./services";
+import {
+  availableCompanySize,
+  availableCountries,
+  availableJobTypes,
+  availableSalaryTypes,
+} from "./services";
 
 export const isValidText = (value, minLength = 1) => {
   return value && value.trim().length >= minLength;
@@ -56,11 +61,11 @@ export const isValidJob = (enteredData) => {
   }
 
   if (!isValidNumber(enteredSalaryFrom)) {
-    errors.salary = "Starting salary must be a positive number";
+    errors.salaryFrom = "Starting salary must be a positive number";
   } else if (!isValidNumber(enteredSalaryTo)) {
-    errors.salary = "Ending salary must be a positive number";
+    errors.salaryTo = "Ending salary must be a positive number";
   } else if (enteredSalaryFrom > enteredSalaryTo) {
-    errors.salary = "Starting salary cannot be higher than ending salary";
+    errors.salaryFrom = "Starting salary cannot be higher than ending salary";
   }
 
   if (!isValidOption(enteredSalaryType, availableSalaryTypes)) {
@@ -115,5 +120,70 @@ export const isValidSeeker = (enteredData) => {
   return {
     isValid: true,
     data: enteredData,
+  };
+};
+
+export const isValidEmployer = (enteredData) => {
+  const errors = {};
+
+  if (!isValidText(enteredData.firstName)) {
+    errors.firstName = "First name is required";
+  }
+
+  if (!isValidText(enteredData.lastName)) {
+    errors.lastName = "Last name is required";
+  }
+
+  if (!isValidText(enteredData.companyName)) {
+    errors.companyName = "Company name cannot be empty";
+  }
+
+  if (!isValidOption(enteredData.companySize?.value, availableCompanySize)) {
+    errors.companySize = "Invalid company size option";
+  }
+
+  if (!isValidOption(enteredData.country?.value, availableCountries)) {
+    errors.country = "Invalid country option";
+  }
+
+  if (
+    isValidText(enteredData.websiteUrl) &&
+    !isValidUrl(enteredData.websiteUrl)
+  ) {
+    errors.websiteUrl =
+      'URL is invalid, try something like: "https://www.example.com"';
+  }
+
+  if (enteredData.applyCheckbox) {
+    if (!isValidText(enteredData.applicationUrl)) {
+      errors.applicationUrl =
+        "Application URL is a required field. Uncheck the checkbox if you want to proceed without";
+    } else if (!isValidUrl(enteredData.applicationUrl)) {
+      errors.applicationUrl =
+        'URL is invalid, try something like: "https://www.example.com/job-application"';
+    }
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return {
+      isValid: false,
+      errors,
+    };
+  }
+
+  return {
+    isValid: true,
+    data: {
+      firstName: enteredData.firstName,
+      lastName: enteredData.lastName,
+      company: {
+        name: enteredData.companyName,
+        size: enteredData.companySize?.value,
+        country: enteredData.country?.value,
+        websiteUrl: enteredData.websiteUrl,
+        customApply: enteredData.applyCheckbox,
+        applicationUrl: enteredData.applicationUrl || "",
+      },
+    },
   };
 };

@@ -2,8 +2,7 @@ import Link from "next/link";
 import { BiRightArrowAlt } from "react-icons/bi";
 
 import Container from "../components/Container";
-import FeaturedCareerAdvices from "../components/FeaturedCareerAdvices";
-import Search from "../components/Search";
+import Search from "../features/jobs/Search";
 import Section from "@/components/Section";
 import classes from "./Home.module.css";
 
@@ -27,7 +26,6 @@ const HomePage = () => {
               <BiRightArrowAlt color="var(--purple)" size="22px" />
             </Link>
           </div>
-          <FeaturedCareerAdvices />
         </Container>
       </Section>
     </>

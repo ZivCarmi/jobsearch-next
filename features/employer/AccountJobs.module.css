@@ -4,17 +4,27 @@
   justify-content: space-between;
 }
 
-.description {
-  margin-bottom: 1rem;
-}
-
 .grid {
   gap: 1rem;
 }
 
 .link {
   display: block;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* display: block;
   padding: 1rem;
   border: 1px solid var(--purple-2nd);
-  border-radius: 4px;
+  border-radius: 4px; */
+}
+
+.actions button,
+.actions a {
+  position: relative;
+  z-index: 1;
 }

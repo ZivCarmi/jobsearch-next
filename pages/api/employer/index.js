@@ -1,93 +1,86 @@
-import connectDb from "@/server/utils/connectDb";
+import { setCookie } from "cookies-next";
+
 import Employers from "@/models/Employer";
 import Users from "@/models/User";
-import {
-  isValidText,
-  isValidOption,
-  isValidUrl,
-} from "@/server/utils/validation";
-import {
-  availableCompanySize,
-  availableCountries,
-} from "@/server/utils/services";
+import { isValidEmployer } from "@/server/utils/validation";
+import connectDb from "@/server/utils/connectDb";
+import { sign } from "@/server/utils/jwt";
 
 const handler = async (req, res) => {
+  const { uid } = req.headers;
+
   if (req.method === "POST") {
     const enteredData = req.body;
 
-    const errors = {};
+    const { isValid, data, errors } = isValidEmployer(enteredData);
 
-    if (!isValidText(enteredData.firstName)) {
-      errors.firstName = "First name cannot be empty";
+    if (!isValid) {
+      return res.status(422).json({ errors });
     }
-
-    if (!isValidText(enteredData.lastName)) {
-      errors.lastName = "Last name cannot be empty";
-    }
-
-    if (!isValidText(enteredData.companyName)) {
-      errors.companyName = "Company name cannot be empty";
-    }
-
-    if (!isValidText(enteredData.companySize)) {
-      errors.companySize = "Please select company size from the list";
-    } else if (!isValidOption(enteredData.companySize, availableCompanySize)) {
-      errors.companySize = "Invalid company size option";
-    }
-
-    if (!isValidText(enteredData.country)) {
-      errors.country = "Please select country from the list";
-    } else if (!isValidOption(enteredData.country, availableCountries)) {
-      errors.country = "Invalid country option";
-    }
-
-    if (
-      isValidText(enteredData.websiteUrl) &&
-      !isValidUrl(enteredData.websiteUrl)
-    ) {
-      errors.websiteUrl =
-        'URL is invalid, try something like: "https://www.example.com"';
-    }
-
-    if (Object.keys(errors).length > 0) {
-      return res.status(422).json({
-        errors,
-      });
-    }
-
-    const { uid } = req.headers;
-    const validatedData = {
-      firstName: enteredData.firstName,
-      lastName: enteredData.lastName,
-      company: {
-        name: enteredData.companyName,
-        size: enteredData.companySize,
-        country: enteredData.country,
-        websiteUrl: enteredData.websiteUrl,
-      },
-    };
 
     try {
       await connectDb();
 
-      await Employers.updateOne(
-        { _id: uid },
-        { $set: { _id: uid, ...validatedData } },
-        { upsert: true }
-      );
+      const newEmployer = new Employers({
+        _id: uid,
+        ...data,
+      });
 
-      await Users.findOneAndUpdate(
+      await newEmployer.save();
+
+      const updatedUser = await Users.findOneAndUpdate(
         { _id: uid },
         { verified: true },
-        { new: true }
+        { new: true, fields: "-password -__v" }
       );
 
-      return res.status(201).json({});
+      const user = {
+        ...updatedUser.toObject(),
+        _id: updatedUser._id.toString(),
+      };
+
+      const accessToken = await sign(
+        { userInfo: user },
+        process.env.ACCESS_TOKEN_SECRET
+      );
+
+      setCookie("token", accessToken, {
+        req,
+        res,
+        httpOnly: true,
+        secure: true,
+        maxAge: 24 * 60 * 60,
+      });
+
+      return res.status(201).end();
     } catch (error) {
-      // NEED TO HANDLE ERRORS
-      console.log(error);
+      return res.status(500).send(error.message);
     }
   }
+
+  if (req.method === "PUT") {
+    const enteredData = req.body;
+
+    const { isValid, data, errors } = isValidEmployer(enteredData);
+
+    if (!isValid) {
+      return res.status(422).json({ errors });
+    }
+
+    try {
+      await connectDb();
+
+      const updatedEmployer = await Employers.findByIdAndUpdate(uid, data, {
+        new: true,
+      });
+
+      return res.status(201).json(updatedEmployer);
+    } catch (error) {
+      return res.status(500).send(error.message);
+    }
+  }
+
+  res.status(405).end();
 };
 
 export default handler;

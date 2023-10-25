@@ -6,26 +6,27 @@ import Link from "next/link";
 import TabCard from "../account/TabCard";
 import Grid from "@/components/Grid";
 import JobDate from "../jobs/JobDate";
-import Modal from "@/components/Modal";
-import SingleJobApp from "./SingleJobApp";
 import TextWithIcon from "@/components/TextWithIcon";
+import RouteContent from "../account/RouteContent";
 
 import classes from "./AccountJobApps.module.css";
 
 const AccountJobApplications = ({ route, data }) => {
   const router = useRouter();
-  const { id } = router.query;
-  const hasJobApps = data.length > 0;
+  const page = parseInt(router.query.page);
+  const returnUrl = `${route.url}${page ? "?page=" + page : ""}`;
 
   return (
     <TabCard title="Job Applications">
-      {!hasJobApps && <p>Seems like you didn't apply to any jobs yet...</p>}
-      {hasJobApps && (
+      <RouteContent
+        fallback={<p>Seems like you didn't apply to any jobs yet...</p>}
+        data={data}
+      >
         <Grid tag="ul" className={classes.grid}>
-          {data.map((jobApp) => (
+          {data.data.map((jobApp) => (
             <li key={jobApp._id}>
               <Link
-                href={`/myaccount/[route]/?route=job-applications&id=${jobApp._id}`}
+                href={`/myaccount/[route]/?route=job-applications&id=${jobApp._id}&redirect=${returnUrl}&page=${page}`}
                 as={`/myaccount/job-applications/${jobApp._id}`}
                 shallow
                 className={classes.link}
@@ -50,16 +51,10 @@ const AccountJobApplications = ({ route, data }) => {
                   />
                 </div>
               </Link>
-              {id === jobApp._id && (
-                <Modal
-                  exitHref={route.url}
-                  children={<SingleJobApp data={jobApp} />}
-                />
-              )}
             </li>
           ))}
         </Grid>
-      )}
+      </RouteContent>
     </TabCard>
   );
 };

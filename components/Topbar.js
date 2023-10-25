@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { MdOutlineLogout } from "react-icons/md";
+import { AiFillHeart } from "react-icons/ai";
 
 import Container from "./Container";
 import useLogout from "../hooks/useLogout";
@@ -44,21 +45,16 @@ const Topbar = () => {
                 </>
               ) : (
                 <>
-                  <li className={classes.bgBtn}>
-                    <Link
-                      href="/register"
-                      className={router.pathname == "/" ? "active" : ""}
-                    >
-                      Register
+                  <li>
+                    <Link href="/favorites">
+                      <AiFillHeart color="var(--purple-2nd)" size="1.5rem" />
                     </Link>
                   </li>
+                  <li className={classes.bgBtn}>
+                    <Link href="/register">Register</Link>
+                  </li>
                   <li className={classes.borderBtn}>
-                    <Link
-                      href="/login"
-                      className={router.pathname == "/" ? "active" : ""}
-                    >
-                      Login
-                    </Link>
+                    <Link href="/login">Login</Link>
                   </li>
                 </>
               )}

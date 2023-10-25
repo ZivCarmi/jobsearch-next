@@ -3,3 +3,7 @@
   font-weight: 500;
   margin-bottom: 0.3rem;
 }
+
+input + .label {
+  margin-bottom: 0;
+}

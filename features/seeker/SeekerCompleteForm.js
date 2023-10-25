@@ -1,42 +1,50 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
 
-import Textarea from "@/components/Textarea";
 import CompleteRegistration from "../auth/CompleteRegistration";
-import useInput from "@/hooks/useInput";
-import { setIsNewUser } from "../auth/authSlice";
-import { isEmpty } from "@/client/utils";
-import {
-  useCreateSeekerMutation,
-  useUpdateSeekerMutation,
-} from "./seekerApiSlice";
+import { setIsNewUser, verifyUser } from "../auth/authSlice";
+import Textarea from "@/components/Textarea";
+import Flex from "@/components/Flex";
+import Input from "@/components/Input";
 
 const SeekerCompleteForm = () => {
   const dispatch = useDispatch();
   const [formStep, setFormStep] = useState(1);
-  const [fNameIsValid, fNameIsError, fNameAttributes] = useInput(isEmpty);
-  const [lNameIsValid, lNameIsError, lNameAttributes] = useInput(isEmpty);
-  const [aboutIsError, setAboutIsError] = useState(false);
-  const [createSeeker, { isLoading: firstStepLoading }] =
-    useCreateSeekerMutation();
-  const [updateSeeker, { isLoading: secondStepLoading }] =
-    useUpdateSeekerMutation();
+  const {
+    register,
+    handleSubmit,
+    getValues: firstFormValues,
+    formState: { errors, isSubmitting: firstFormSubmitting },
+  } = useForm();
+  const {
+    register: register2,
+    handleSubmit: handleSubmit2,
+    formState: { errors: errors2, isSubmitting: secondFormSubmitting },
+  } = useForm();
 
-  const isFormValid = fNameIsValid && lNameIsValid;
-
-  const submitFirstStepHandler = async () => {
-    fNameAttributes.onBlur();
-    lNameAttributes.onBlur();
-
-    if (!isFormValid) return;
-
-    const enteredData = {
-      firstName: fNameAttributes.value,
-      lastName: lNameAttributes.value,
-    };
-
+  const submitFirstStepHandler = async (data) => {
     try {
-      await createSeeker(enteredData);
+      const response = await fetch("/api/seeker", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.status === 422) {
+        const json = await response.json();
+
+        for (const error in json.errors) {
+          setError(error, { message: json.errors[error] });
+          return;
+        }
+      }
+
+      if (!response.ok) return;
+
+      dispatch(verifyUser(true));
 
       setFormStep(2);
     } catch (error) {
@@ -44,23 +52,21 @@ const SeekerCompleteForm = () => {
     }
   };
 
-  const submitFinalFormHandler = async (e) => {
-    setAboutIsError(false);
-
-    const enteredData = {
-      about: e.target.about.value,
-    };
-
-    if (!isEmpty(enteredData.about)) {
-      return setAboutIsError(true);
-    }
-
+  const submitFinalFormHandler = async (data) => {
     try {
-      await updateSeeker(enteredData);
+      const response = await fetch("/api/seeker", {
+        method: "PATCH",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) return;
 
       dispatch(setIsNewUser(false));
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -72,38 +78,64 @@ const SeekerCompleteForm = () => {
           title: "Getting Started",
           intro:
             "Before you can start applying for jobs, we will need some info about you.",
-          onSave: submitFirstStepHandler,
-          isLoading: firstStepLoading,
+          onSubmit: handleSubmit(submitFirstStepHandler),
+          jsx: (
+            <Flex>
+              <Input
+                label="First Name"
+                error={errors?.firstName?.message}
+                input={{
+                  id: "firstName",
+                  ...register("firstName", {
+                    required: {
+                      value: true,
+                      message: "First name is required",
+                    },
+                  }),
+                }}
+              />
+              <Input
+                label="Last Name"
+                error={errors?.lastName?.message}
+                input={{
+                  id: "lastName",
+                  ...register("lastName", {
+                    required: {
+                      value: true,
+                      message: "Last name is required",
+                    },
+                  }),
+                }}
+              />
+            </Flex>
+          ),
+          isSubmitting: firstFormSubmitting,
         },
         2: {
-          title: `Welcome, ${fNameAttributes.value}`,
+          title: `Welcome, ${firstFormValues().firstName}`,
           intro:
             "Let's get to know you better, shall we?\nDescribe your expertise for example.",
-          onSave: submitFinalFormHandler,
-          isLoading: secondStepLoading,
+          onSubmit: handleSubmit2(submitFinalFormHandler),
+          jsx: (
+            <Textarea
+              label="About"
+              error={errors2?.about?.message}
+              textarea={{
+                id: "about",
+                ...register2("about", {
+                  required: {
+                    value: true,
+                    message: "Please provide some details about you",
+                  },
+                }),
+              }}
+            />
+          ),
+          isSubmitting: secondFormSubmitting,
           skippable: true,
         },
       }}
-      fName={{
-        fNameIsError,
-        fNameAttributes,
-      }}
-      lName={{
-        lNameIsError,
-        lNameAttributes,
-      }}
-    >
-      <Textarea
-        label="About"
-        error={aboutIsError}
-        errorMsg="Please provide some details about you"
-        textarea={{
-          id: "about",
-          name: "about",
-          onChange: (e) => e.target.value && setAboutIsError(false),
-        }}
-      />
-    </CompleteRegistration>
+    />
   );
 };
 

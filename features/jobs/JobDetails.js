@@ -1,5 +1,6 @@
+import { FaArrowAltCircleRight } from "react-icons/fa";
+
 import Favorite from "@/components/Favorite";
-import ApplyButton from "@/components/ApplyButton";
 import CompanyIcon from "../company/CompanyIcon";
 import JobSummary from "./JobSummary";
 import JobDate from "./JobDate";
@@ -23,8 +24,7 @@ const JobDetails = ({ job }) => {
         <div className={classes.right}>
           <JobDate date={job?.createdAt} />
           <div className={classes.actions}>
-            <Favorite />
-            {/* <ApplyButton withIcon /> */}
+            <Favorite jobId={job._id} />
           </div>
         </div>
       </div>

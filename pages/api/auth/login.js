@@ -3,35 +3,7 @@ import bcrypt from "bcrypt";
 
 import connectDb from "@/server/utils/connectDb";
 import Users from "@/models/User";
-import Employers from "@/models/Employer";
 import { sign } from "@/server/utils/jwt";
-import { getSeeker } from "../seeker";
-
-export const getUserMeta = async (userId, userType) => {
-  if (!userId) return console.log("Unknown user ID");
-
-  if (!userType) return console.log("Unknown user type");
-
-  let userMetaData;
-
-  if (userType === "seeker") {
-    const fetchedSeeker = await getSeeker(
-      userId,
-      "-createdAt -updatedAt -__v -_id"
-    );
-
-    userMetaData = {
-      ...fetchedSeeker,
-    };
-  } else if (userType === "employer") {
-    // const fetchedEmployer = await getEmployer(userId);
-    // userMetaData = {
-    //   ...fetchedEmployer,
-    // };
-  }
-
-  return userMetaData;
-};
 
 const handler = async (req, res) => {
   if (req.method !== "POST") {
@@ -63,7 +35,7 @@ const handler = async (req, res) => {
     }
 
     const user = {
-      id: fetchedUser._id,
+      _id: fetchedUser._id,
       email: fetchedUser.email,
       type: fetchedUser.type,
       verified: fetchedUser.verified,
@@ -82,12 +54,6 @@ const handler = async (req, res) => {
       secure: true,
       maxAge: 24 * 60 * 60,
     });
-
-    const userMeta = await getUserMeta(fetchedUser._id, fetchedUser.type);
-
-    user.metaData = {
-      ...userMeta,
-    };
 
     res.json({ accessToken, user });
   } catch (error) {

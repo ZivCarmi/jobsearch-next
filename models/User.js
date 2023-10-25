@@ -27,6 +27,10 @@ const userSchema = new Schema(
       required: [true, "Verified is required"],
       default: false,
     },
+    // searches: {
+    //   type: String,
+
+    // }
   },
   { timestamps: true }
 );

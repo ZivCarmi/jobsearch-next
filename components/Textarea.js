@@ -8,7 +8,7 @@ const Textarea = (props) => {
     <div className={classes.textarea}>
       {props.label && <Label htmlFor={props.textarea.id}>{props.label}</Label>}
       <textarea {...props.textarea} />
-      <ErrorMessage>{props.errorMsg || props.error}</ErrorMessage>
+      <ErrorMessage errors={props.errorMsg || props.error} />
     </div>
   );
 };

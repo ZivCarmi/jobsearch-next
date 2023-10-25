@@ -1,75 +1,46 @@
-import { useSelector } from "react-redux";
-import { useController, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
-import Flex from "../../components/Flex";
-import Grid from "../../components/Grid";
-import Input from "../../components/Input";
+import Flex from "@/components/Flex";
+import Grid from "@/components/Grid";
+import Input from "@/components/Input";
 import AccountDetailsForm from "../account/AccountDetails";
 import TabSection from "../account/TabSection";
 import CompanyFields from "../company/CompanyFields";
 
 import classes from "../account/AccountDetails.module.css";
-import { isValidUrl } from "@/client/utils";
 
-const AccountDetails = ({ userData, countries, companySizes }) => {
+const AccountDetails = ({ userData }) => {
   const {
     control,
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm();
-  const { field: companySizeSelect } = useController({
-    name: "companySize",
-    control,
-    defaultValue: userData.company.size,
-    rules: {
-      required: {
-        value: true,
-        message: "Company size is a required field",
-      },
-    },
-  });
-  const { field: countrySelect } = useController({
-    name: "country",
-    control,
-    defaultValue: userData.company.country,
-    rules: {
-      required: {
-        value: true,
-        message: "Country is a required field",
-      },
-    },
-  });
-  const token = useSelector((state) => state.auth.token);
 
   const saveUserHandler = async (data) => {
-    console.log(data);
-    // const enteredData = {
-    //   firstName: e.target.firstName.value,
-    //   lastName: e.target.lastName.value,
-    //   companyName: e.target.companyName.value,
-    //   companySize: e.target.companySize.value,
-    //   country: e.target.country.value,
-    //   websiteUrl: e.target.websiteUrl.value,
-    // };
+    try {
+      const response = await fetch("api/employer", {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-    // const response = await fetch("api/employer", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Authorization: `Bearer ${token}`,
-    //   },
-    //   body: JSON.stringify(enteredData),
-    // });
+      if (response.status === 422) {
+        const json = await response.json();
 
-    // const data = await response.json();
+        for (const error in json.errors) {
+          setError(error, { message: json.errors[error] });
+          return;
+        }
+      }
 
-    // if (response.status === 422) {
-    //   setErrors(data.errors);
-    //   return;
-    // }
-
-    // setErrors(null);
+      if (!response.ok) return;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -109,50 +80,7 @@ const AccountDetails = ({ userData, countries, companySizes }) => {
         </Grid>
       </TabSection>
       <TabSection title="Company Information">
-        <CompanyFields
-          cName={{
-            error: errors?.companyName?.message,
-            attributes: {
-              ...register("companyName", {
-                required: {
-                  value: true,
-                  message: "Company name is a required field",
-                },
-                value: userData.company.name,
-              }),
-            },
-          }}
-          cSize={{
-            error: errors?.companySize?.message,
-            attributes: {
-              ...companySizeSelect,
-              options: companySizes,
-            },
-          }}
-          country={{
-            error: errors?.country,
-            attributes: {
-              ...countrySelect,
-              options: countries,
-            },
-          }}
-          websiteUrl={{
-            error: errors?.websiteUrl?.message,
-            attributes: {
-              ...register("websiteUrl", {
-                validate: (value) => {
-                  if (!value) return true;
-
-                  return (
-                    isValidUrl(value) ||
-                    'URL is invalid, try something like: "https://www.example.com"'
-                  );
-                },
-                value: userData.company.websiteUrl,
-              }),
-            },
-          }}
-        />
+        <CompanyFields values={userData.company} control={control} />
       </TabSection>
     </AccountDetailsForm>
   );

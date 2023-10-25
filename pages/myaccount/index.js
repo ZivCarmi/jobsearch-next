@@ -3,6 +3,8 @@ import AccountSettings from "@/features/account/AccountSettings";
 import AccountDetails from "@/features/seeker/AccountDetails";
 import AccountJobApplications from "@/features/seeker/AccountJobApps";
 import { getSeeker } from "../api/seeker";
+import SingleJobAppModal from "@/features/seeker/SingleJobAppModal";
+import SingleJobApp from "@/features/seeker/SingleJobApp";
 
 export const MyAccountTabs = [
   {
@@ -10,30 +12,38 @@ export const MyAccountTabs = [
     slug: "/",
     url: "/myaccount",
     label: "Account Details",
-    component: AccountDetails,
+    components: {
+      root: AccountDetails,
+    },
   },
   {
     id: 2,
     slug: "job-applications",
     url: "/myaccount/job-applications",
     label: "Job Applications",
-    component: AccountJobApplications,
+    components: {
+      root: AccountJobApplications,
+      modal: SingleJobAppModal,
+      single: SingleJobApp,
+    },
   },
   {
     id: 3,
     slug: "settings",
     url: "/myaccount/settings",
     label: "Settings",
-    component: AccountSettings,
+    components: {
+      root: AccountSettings,
+    },
   },
 ];
 
-const SeekerPanelPage = (props) => {
+const SeekerPanelPage = ({ user }) => {
   return (
     <Account
       title="My Account"
       tabs={MyAccountTabs}
-      children={<AccountDetails userData={props.fetchedUser} />}
+      children={<AccountDetails userData={user} />}
     />
   );
 };
@@ -45,7 +55,7 @@ export const getServerSideProps = async ({ req }) => {
 
   return {
     props: {
-      fetchedUser: JSON.parse(JSON.stringify(userData)),
+      user: JSON.parse(JSON.stringify(userData)),
     },
   };
 };

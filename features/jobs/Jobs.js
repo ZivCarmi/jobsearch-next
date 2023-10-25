@@ -6,15 +6,15 @@ import Section from "@/components/Section";
 import JobModal from "./JobModal";
 import ApplyModal from "./ApplyModal";
 
-const Jobs = ({ results, canApply }) => {
+const Jobs = ({ jobs, canApply }) => {
   const router = useRouter();
   const { jobId, apply } = router.query;
 
   return (
     <Section>
       <Container>
-        {results.data?.length ? (
-          <AvailableJobs results={results} />
+        {jobs.data?.length ? (
+          <AvailableJobs results={jobs} />
         ) : (
           <p>No jobs found :(</p>
         )}

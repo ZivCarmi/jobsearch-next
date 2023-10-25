@@ -11,6 +11,9 @@ const SingleJob = ({ job, setIsSubmitting, isExternalSubmit = false }) => {
     control,
     register,
     handleSubmit,
+    setError,
+    getValues,
+    trigger,
     formState: { errors, isSubmitting },
   } = useForm();
   const { field: jobTypeSelect } = useController({
@@ -62,6 +65,13 @@ const SingleJob = ({ job, setIsSubmitting, isExternalSubmit = false }) => {
           value: true,
           message: "Salary from is a required field",
         },
+        onChange: (e) => {
+          Boolean(getValues().salaryTo) && trigger("salaryFrom");
+        },
+        setValueAs: (v) => parseInt(v),
+        validate: (value) =>
+          value <= getValues().salaryTo ||
+          "Starting salary cannot be higher than ending salary",
         value: job?.salaryFrom,
       }),
     },
@@ -71,6 +81,11 @@ const SingleJob = ({ job, setIsSubmitting, isExternalSubmit = false }) => {
           value: true,
           message: "Salary to is a required field",
         },
+        onChange: (e) => {
+          trigger("salaryTo");
+          trigger("salaryFrom");
+        },
+        setValueAs: (v) => parseInt(v),
         value: job?.salaryTo,
       }),
     },
@@ -102,6 +117,16 @@ const SingleJob = ({ job, setIsSubmitting, isExternalSubmit = false }) => {
         body: JSON.stringify(data),
       });
 
+      if (response.status === 422) {
+        const json = await response.json();
+
+        for (const error in json.errors) {
+          setError(error, { message: json.errors[error] });
+        }
+
+        return;
+      }
+
       if (!response.ok) return;
 
       router.push(redirect, null, { scroll: false });
@@ -110,9 +135,9 @@ const SingleJob = ({ job, setIsSubmitting, isExternalSubmit = false }) => {
     }
   };
 
-  useEffect(() => {
-    setIsSubmitting(isSubmitting);
-  }, [isSubmitting]);
+  // useEffect(() => {
+  //   setIsSubmitting(isSubmitting);
+  // }, [isSubmitting]);
 
   return (
     <HireForm

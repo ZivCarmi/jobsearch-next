@@ -22,7 +22,7 @@ const PersistLogin = ({ children }) => {
     };
 
     if (!token) {
-      isPersist ? verifyToken() : logout();
+      isPersist && verifyToken();
     }
   }, []);
 

@@ -23,7 +23,7 @@ const Header = () => {
           <Link href="/complete-registration">complete registration</Link>
         </div>
       )}
-      <header className={headerClasses}>
+      <header className={headerClasses} id="main-header">
         <Topbar />
         <MainNavigation />
       </header>

@@ -28,6 +28,10 @@
   padding-bottom: 1rem;
 }
 
+.date {
+  justify-content: flex-end;
+}
+
 .card h2 {
   margin: 0.6rem 0 0.2rem;
 }
@@ -55,32 +59,11 @@
   gap: 0.4rem;
 }
 
-.link {
+.apply {
   margin-top: 1rem;
   position: relative;
 }
 
-.apply {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.applyButton {
+  text-align: center;
 }
-
-/* .apply {
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--orange);
-  border-radius: 4px;
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
-}
-
-.apply:hover {
-  background-color: var(--orange);
-  color: white;
-} */

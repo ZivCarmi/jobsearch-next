@@ -1,62 +1,72 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { BsEye } from "react-icons/bs";
 
-import Grid from "@/components/Grid";
-import TabCard from "../account/TabCard";
 import JobDate from "../jobs/JobDate";
-import Pagination from "@/components/Pagination";
-import SingleJobModal from "./SingleJobModal";
+import RouteContent from "@/features/account/RouteContent";
+import Table from "@/components/Table";
+import AppLink from "@/components/AppLink";
 
 import classes from "./AccountJobs.module.css";
 
-const AccountJobs = ({ route, data: { jobs, pagination, totalCount } }) => {
+const AccountJobs = ({ route, data }) => {
   const router = useRouter();
-  const id = router.query.id;
   const page = parseInt(router.query.page);
-  const [postedJobs, setPostedJobs] = useState(jobs);
-  const haveJobs = totalCount > 0;
   const returnUrl = `${route.url}${page ? "?page=" + page : ""}`;
 
-  useEffect(() => {
-    setPostedJobs(jobs);
-  }, [jobs]);
+  const header = (
+    <tr>
+      <th width="30%">Title</th>
+      <th width="30%">Location</th>
+      <th width="20%">Date</th>
+      <th width="20%">Actions</th>
+    </tr>
+  );
+
+  const body = data.data.map((job) => (
+    <tr key={job._id}>
+      <th>
+        <Link
+          href={`/managepanel/jobs/${job._id}`}
+          className={classes.link}
+          title="Edit Job"
+        />
+      </th>
+      <td width="30%">
+        <div>{job.title}</div>
+      </td>
+      <td width="30%">
+        <div>{job.location}</div>
+      </td>
+      <td width="20%">
+        <JobDate date={job.createdAt} />
+      </td>
+      <td width="20%" className={classes.actions}>
+        <AppLink
+          asIcon
+          href={`/managepanel/[route]/?route=jobs&id=${job._id}&redirect=${returnUrl}&page=${page}`}
+          as={`/managepanel/jobs/${job._id}`}
+          shallow
+          title="Quick View"
+        >
+          <BsEye />
+        </AppLink>
+      </td>
+    </tr>
+  ));
 
   return (
-    <TabCard title="My Jobs">
-      {!haveJobs && <p>Seems like you didn't post any jobs yet...</p>}
-      {haveJobs && (
-        <>
-          <p className={classes.description}>
-            You posted <strong>{totalCount}</strong> jobs
-          </p>
-          <div className={classes.list}>
-            <Grid tag="ul" className={classes.grid}>
-              {postedJobs.map((job) => (
-                <li key={job._id}>
-                  <Link
-                    href={`/managepanel/[route]/?route=jobs&id=${job._id}&redirect=${returnUrl}&page=${page}`}
-                    as={`/managepanel/jobs/${job._id}`}
-                    shallow
-                    className={classes.link}
-                  >
-                    <div className={classes.head}>
-                      <div>{job.title}</div>
-                      <JobDate date={job.createdAt} />
-                    </div>
-                    <div className={classes.body}>
-                      <div>{job.location}</div>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </Grid>
-          </div>
-        </>
-      )}
-      <Pagination pagesCount={pagination.pagesCount} />
-      {id && <SingleJobModal id={id} />}
-    </TabCard>
+    <RouteContent
+      fallback={<p>Seems like you didn't recieve any applications yet...</p>}
+      description={
+        <p>
+          You have <strong>{data.totalCount}</strong> Jobs
+        </p>
+      }
+      data={data}
+    >
+      <Table header={header} body={body} />
+    </RouteContent>
   );
 };
 

@@ -31,7 +31,7 @@ const handler = async (req, res) => {
     await newUser.save();
 
     const user = {
-      id: newUser._id,
+      _id: newUser._id,
       email: newUser.email,
       type: newUser.type,
       verified: newUser.verified,
@@ -50,8 +50,6 @@ const handler = async (req, res) => {
       secure: true,
       maxAge: 24 * 60 * 60,
     });
-
-    user.metaData = {};
 
     return res.status(201).json({ accessToken, user });
   } catch (error) {

@@ -23,10 +23,6 @@
   color: var(--purple);
 }
 
-.date {
-  justify-content: flex-start;
-}
-
 .actions button,
 .actions a {
   position: relative;

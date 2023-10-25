@@ -49,7 +49,7 @@ const handler = async (req, res) => {
       const validateJob = isValidJob(enteredData);
 
       if (!validateJob.isValid) {
-        return res.status(422).json(validateJob.errors);
+        return res.status(422).json({ errors: validateJob.errors });
       }
 
       await Jobs.findByIdAndUpdate(jobId, validateJob.data);

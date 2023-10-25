@@ -1,34 +1,34 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { BsEye } from "react-icons/bs";
 
 import JobDate from "../jobs/JobDate";
-import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import AppLink from "@/components/AppLink";
-import SingleJobAppModal from "./SingleJobAppModal";
+import RouteContent from "@/features/account/RouteContent";
 
 import classes from "../account/JobApps.module.css";
 
-const AccountJobApps = ({ route, data: { data, pagination, totalCount } }) => {
+const AccountJobApps = ({ route, data }) => {
   const router = useRouter();
-  const id = router.query.id;
   const page = parseInt(router.query.page);
-  const [jobApps, setJobApps] = useState(data);
-  const haveJobApps = totalCount > 0;
   const returnUrl = `${route.url}${page ? "?page=" + page : ""}`;
 
-  useEffect(() => {
-    setJobApps(data);
-  }, [data]);
+  const header = (
+    <tr>
+      <th width="30%">Candidate</th>
+      <th width="15%">Status</th>
+      <th width="20%">Date</th>
+      <th width="15%"></th>
+      <th width="20%">Actions</th>
+    </tr>
+  );
 
-  const content = jobApps.map((jobApp) => (
+  const body = data.data.map((jobApp) => (
     <tr key={jobApp._id}>
       <th>
         <Link
-          href={`/managepanel/[route]/?route=job-applications&id=${jobApp._id}`}
-          as={`/managepanel/job-applications/${jobApp._id}`}
+          href={`/managepanel/job-applications/${jobApp._id}`}
           className={classes.link}
           title="Job Application page"
         />
@@ -60,25 +60,17 @@ const AccountJobApps = ({ route, data: { data, pagination, totalCount } }) => {
   ));
 
   return (
-    <>
-      {!haveJobApps && <p>Seems like you didn't apply to any jobs yet...</p>}
-      {haveJobApps && (
-        <Table
-          header={
-            <tr>
-              <th width="30%">Candidate</th>
-              <th width="15%">Status</th>
-              <th width="20%">Date</th>
-              <th width="15%"></th>
-              <th width="20%">Actions</th>
-            </tr>
-          }
-          body={content}
-        />
-      )}
-      <Pagination pagesCount={pagination.pagesCount} />
-      {id && <SingleJobAppModal id={id} setJobApps={setJobApps} />}
-    </>
+    <RouteContent
+      fallback={<p>Seems like you didn't recieve any applications yet...</p>}
+      description={
+        <p>
+          You have <strong>{data.totalCount}</strong> Job Applications
+        </p>
+      }
+      data={data}
+    >
+      <Table header={header} body={body} />
+    </RouteContent>
   );
 };
 

@@ -38,7 +38,6 @@ const authSlice = createSlice({
 });
 
 export const getUser = (state) => state.auth.user;
-export const getUserMeta = (state) => state.auth.user?.metaData;
 
 export const { setCredentials, setUser, setIsNewUser, verifyUser, logOut } =
   authSlice.actions;

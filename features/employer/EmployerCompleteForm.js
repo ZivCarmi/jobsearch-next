@@ -1,74 +1,71 @@
+import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 
 import CompanyFields from "../company/CompanyFields";
-import useInput from "@/hooks/useInput";
-import useSelect from "@/hooks/useSelect";
+import Flex from "@/components/Flex";
+import Input from "@/components/Input";
 import { setIsNewUser, verifyUser } from "../auth/authSlice";
-import { isEmpty, isValidUrl } from "@/client/utils";
-
 import CompleteRegistration from "../auth/CompleteRegistration";
-import { useUpdateEmployerMutation } from "./employerApiSlice";
 
-const EmployerCompleteForm = ({ countries, companySizes }) => {
+const EmployerCompleteForm = () => {
+  const [formStep, setFormStep] = useState(1);
   const router = useRouter();
   const dispatch = useDispatch();
-  const [formStep, setFormStep] = useState(1);
-  const [fNameIsValid, fNameIsError, fNameAttributes] = useInput(isEmpty);
-  const [lNameIsValid, lNameIsError, lNameAttributes] = useInput(isEmpty);
-  const [cNameIsValid, cNameIsError, cNameAttributes] = useInput(isEmpty);
-  const [cSizeIsValid, cSizeIsError, cSizeAttributes] = useSelect(isEmpty);
-  const [countryIsValid, countryIsError, countryAttributes] =
-    useSelect(isEmpty);
-  const [websiteIsValid, websiteIsError, websiteAttributes] = useInput(
-    isValidUrl,
-    false
-  );
-  const [updateEmployer, { isLoading }] = useUpdateEmployerMutation();
+  const {
+    register,
+    formState: { errors },
+    getValues: firstFormValues,
+    handleSubmit,
+  } = useForm();
 
-  const isFirstStepValid = fNameIsValid && lNameIsValid;
-  const isSecondStepValid =
-    isFirstStepValid &&
-    cNameIsValid &&
-    cSizeIsValid &&
-    countryIsValid &&
-    websiteIsValid;
+  console.log(firstFormValues());
 
-  const submitFirstStepHandler = async () => {
-    fNameAttributes.onBlur();
-    lNameAttributes.onBlur();
+  const {
+    control,
+    formState: { isSubmitting },
+    handleSubmit: handleSubmit2,
+    setError,
+  } = useForm();
 
-    if (!isFirstStepValid) return;
-
+  const submitFirstStepHandler = async (data) => {
     setFormStep(2);
   };
 
-  const submitFinalFormHandler = async () => {
-    cNameAttributes.onBlur();
-    cSizeAttributes.onBlur();
-    countryAttributes.onBlur();
-    websiteAttributes.onBlur();
-
-    if (!isSecondStepValid) return;
-
+  const submitFinalFormHandler = async (data) => {
     const enteredData = {
-      firstName: fNameAttributes.value,
-      lastName: lNameAttributes.value,
-      companyName: cNameAttributes.value,
-      companySize: cSizeAttributes.defaultValue,
-      country: countryAttributes.defaultValue,
-      websiteUrl: websiteAttributes.value,
+      ...firstFormValues(),
+      ...data,
     };
 
+    console.log(enteredData);
+
     try {
-      await updateEmployer(enteredData);
+      const response = await fetch("/api/employer", {
+        method: "POST",
+        body: JSON.stringify(enteredData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.status === 422) {
+        const json = await response.json();
+
+        for (const error in json.errors) {
+          setError(error, { message: json.errors[error] });
+          return;
+        }
+      }
+
+      if (!response.ok) return;
 
       dispatch(setIsNewUser(false));
       dispatch(verifyUser(true));
       router.replace("/");
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -80,50 +77,48 @@ const EmployerCompleteForm = ({ countries, companySizes }) => {
           title: "Getting Started",
           intro:
             "Before you can find your right candidates, we will need a little bit of info.",
-          onSave: submitFirstStepHandler,
+          onSubmit: handleSubmit(submitFirstStepHandler),
+          jsx: (
+            <Flex>
+              <Input
+                label="First Name"
+                error={errors?.firstName?.message}
+                input={{
+                  id: "firstName",
+                  ...register("firstName", {
+                    required: {
+                      value: true,
+                      message: "First name is required",
+                    },
+                  }),
+                }}
+              />
+              <Input
+                label="Last Name"
+                error={errors?.lastName?.message}
+                input={{
+                  id: "lastName",
+                  ...register("lastName", {
+                    required: {
+                      value: true,
+                      message: "Last name is required",
+                    },
+                  }),
+                }}
+              />
+            </Flex>
+          ),
         },
         2: {
-          title: `Welcome, ${fNameAttributes.value}`,
+          title: `Welcome, ${firstFormValues().firstName}`,
           intro:
             "We'll also need to get some info about your company.\nPlease fill the required fields in order to proceed.",
-          onSave: submitFinalFormHandler,
-          isLoading,
+          onSubmit: handleSubmit2(submitFinalFormHandler),
+          jsx: <CompanyFields control={control} />,
+          isSubmitting,
         },
       }}
-      fName={{
-        fNameIsError,
-        fNameAttributes,
-      }}
-      lName={{
-        lNameIsError,
-        lNameAttributes,
-      }}
-    >
-      <CompanyFields
-        cName={{
-          error: cNameIsError,
-          attributes: cNameAttributes,
-        }}
-        cSize={{
-          error: cSizeIsError,
-          attributes: {
-            ...cSizeAttributes,
-            options: companySizes,
-          },
-        }}
-        country={{
-          error: countryIsError,
-          attributes: {
-            ...countryAttributes,
-            options: countries,
-          },
-        }}
-        websiteUrl={{
-          error: websiteIsError,
-          attributes: websiteAttributes,
-        }}
-      />
-    </CompleteRegistration>
+    />
   );
 };
 

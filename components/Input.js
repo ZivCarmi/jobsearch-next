@@ -1,9 +1,7 @@
-import { forwardRef } from "react";
-
 import Label from "./Label";
+import ErrorMessage from "./ErrorMessage";
 
 import classes from "./Input.module.css";
-import ErrorMessage from "./ErrorMessage";
 
 const Input = (props) => {
   let input = (
@@ -22,13 +20,13 @@ const Input = (props) => {
     );
   }
 
-  const inputClasses = `${classes.input} ${classes[props.input.type] || ""}`;
+  const inputClasses = `${classes.input} ${props.className || ""}`;
 
   return (
     <div className={inputClasses}>
       {input}
       {props.children}
-      <ErrorMessage>{props.errorMsg || props.error}</ErrorMessage>
+      <ErrorMessage errors={props.errorMsg || props.error} />
     </div>
   );
 };

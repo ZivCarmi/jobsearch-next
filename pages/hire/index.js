@@ -63,10 +63,11 @@ const HirePage = ({ data }) => {
           message: "Salary from is a required field",
         },
         onChange: (e) => {
-          trigger("salaryTo");
+          Boolean(getValues().salaryTo) && trigger("salaryFrom");
         },
+        setValueAs: (v) => parseInt(v),
         validate: (value) =>
-          parseInt(value) <= parseInt(getValues().salaryTo) ||
+          value <= getValues().salaryTo ||
           "Starting salary cannot be higher than ending salary",
       }),
     },
@@ -77,8 +78,10 @@ const HirePage = ({ data }) => {
           message: "Salary to is a required field",
         },
         onChange: (e) => {
+          trigger("salaryTo");
           trigger("salaryFrom");
         },
+        setValueAs: (v) => parseInt(v),
       }),
     },
     salaryType: salaryTypeSelect,

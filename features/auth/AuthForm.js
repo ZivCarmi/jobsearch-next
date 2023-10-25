@@ -4,18 +4,19 @@ import Flex from "../../components/Flex";
 import Input from "../../components/Input";
 import ErrorMessage from "@/components/ErrorMessage";
 import Button from "@/components/Button";
+import FormErrors from "@/components/FormErrors";
 
 import classes from "./AuthForm.module.css";
-import FormErrors from "@/components/FormErrors";
 
 const AuthForm = ({ fields, errors, onSubmit, isSubmitting, page }) => {
   return (
     <Form noValidate onSubmit={onSubmit}>
       <FormErrors errors={errors?.serverError?.message} />
       {page === "register" && (
-        <div className={classes.userType}>
+        <div className={classes.accountType}>
           <Flex>
             <Input
+              className={classes.radio}
               label="I'm a job seeker"
               reversed
               input={{
@@ -26,6 +27,7 @@ const AuthForm = ({ fields, errors, onSubmit, isSubmitting, page }) => {
               }}
             />
             <Input
+              className={classes.radio}
               label="I'm hiring for a job"
               reversed
               input={{
@@ -60,6 +62,7 @@ const AuthForm = ({ fields, errors, onSubmit, isSubmitting, page }) => {
         />
         {page === "login" && (
           <Input
+            className={classes.checkbox}
             label="Remember me"
             reversed
             input={{

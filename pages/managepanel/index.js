@@ -5,11 +5,8 @@ import AccountJobs from "@/features/employer/AccountJobs";
 import AccountJobApps from "@/features/employer/AccountJobApps";
 import connectDb from "@/server/utils/connectDb";
 import Employers from "@/models/Employer";
-import {
-  availableCountries,
-  availableCompanySize,
-} from "@/server/utils/services";
-import { formatSelectOptions } from "@/client/utils/services";
+import SingleJobAppModal from "@/features/employer/SingleJobAppModal";
+import SingleJobModal from "@/features/employer/SingleJobModal";
 
 export const ManagePanelTabs = [
   {
@@ -17,28 +14,38 @@ export const ManagePanelTabs = [
     slug: "/",
     url: "/managepanel",
     label: "Account Details",
-    component: AccountDetails,
+    components: {
+      root: AccountDetails,
+    },
   },
   {
     id: 2,
     slug: "jobs",
     url: "/managepanel/jobs",
     label: "My Jobs",
-    component: AccountJobs,
+    components: {
+      root: AccountJobs,
+      modal: SingleJobModal,
+    },
   },
   {
     id: 3,
     slug: "job-applications",
     url: "/managepanel/job-applications",
     label: "Job Applications",
-    component: AccountJobApps,
+    components: {
+      root: AccountJobApps,
+      modal: SingleJobAppModal,
+    },
   },
   {
     id: 4,
     slug: "settings",
     url: "/managepanel/settings",
     label: "Settings",
-    component: AccountSettings,
+    components: {
+      root: AccountSettings,
+    },
   },
 ];
 
@@ -47,13 +54,7 @@ const EmployerPanelPage = (props) => {
     <Account
       title="Manage Panel"
       tabs={ManagePanelTabs}
-      children={
-        <AccountDetails
-          userData={props.fetchedUser}
-          countries={props.countries}
-          companySizes={props.companySizes}
-        />
-      }
+      children={<AccountDetails userData={props.fetchedUser} />}
     />
   );
 };
@@ -68,14 +69,9 @@ export const getServerSideProps = async ({ req }) => {
     "-_id firstName lastName company"
   ).lean({ getters: true });
 
-  const countries = formatSelectOptions(availableCountries);
-  const companySizes = formatSelectOptions(availableCompanySize);
-
   return {
     props: {
       fetchedUser: JSON.parse(JSON.stringify(userData)),
-      countries,
-      companySizes,
     },
   };
 };

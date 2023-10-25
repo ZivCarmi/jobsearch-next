@@ -9,7 +9,7 @@ export const config = {
   matcher: [
     "/api/jobs/:path*",
     "/api/employer/:path*",
-    "/api/seeker",
+    "/api/seeker/:path*",
     "/api/upload/:path*",
     "/login",
     "/register",
@@ -34,7 +34,7 @@ const middleware = async (request) => {
   } else {
     try {
       const { userInfo } = await verify(token, process.env.ACCESS_TOKEN_SECRET);
-      const userId = userInfo.id;
+      const userId = userInfo._id;
       const userType = userInfo.type;
       const isUserVerified = userInfo.verified;
 

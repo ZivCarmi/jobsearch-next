@@ -1,27 +1,29 @@
+import { useRouter } from "next/router";
 import { forwardRef } from "react";
 import Link from "next/link";
 
-import ApplyButton from "@/components/ApplyButton";
 import CompanyIcon from "../company/CompanyIcon";
 import JobDate from "./JobDate";
+import ApplyButton from "./ApplyButton";
 
 import classes from "./JobCard.module.css";
-import { useSelector } from "react-redux";
 
 const JobCard = forwardRef(({ job }, ref) => {
-  const userType = useSelector((state) => state.auth.user?.type);
+  const router = useRouter();
 
   return (
     <li className={classes.card} ref={ref}>
       <div className={classes.wrapper}>
         <Link
-          href={`/jobs/?jobId=${job._id}`}
-          as={`/jobs/${job._id}`}
+          href={`${router.pathname}/?jobId=${job._id}&redirect=${router.asPath}`}
+          as={`${router.pathname}/${job._id}`}
           shallow={true}
           className={classes.viewLink}
         />
         <div className={classes.heading}>
-          {job.createdAt && <JobDate date={job.createdAt} />}
+          {job.createdAt && (
+            <JobDate date={job.createdAt} className={classes.date} />
+          )}
           <h2>{job.title}</h2>
           <div className={classes.location}>{job.location}</div>
         </div>
@@ -35,19 +37,9 @@ const JobCard = forwardRef(({ job }, ref) => {
             <CompanyIcon company={job.employer.company} />
             <span>{job.employer.company?.name}</span>
           </div>
-          {userType !== "employer" && (
-            <div className={classes.link}>
-              <ApplyButton
-                link={{
-                  href: `/jobs/?jobId=${job._id}&apply=true`,
-                  as: `/jobs/${job._id}/apply`,
-                  shallow: true,
-                }}
-                className={classes.apply}
-                text="Apply Now"
-              />
-            </div>
-          )}
+          <div className={classes.apply}>
+            <ApplyButton job={job} />
+          </div>
         </div>
       </div>
     </li>

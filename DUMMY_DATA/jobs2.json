@@ -1,0 +1,1383 @@
+[{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d54ff"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "UI/UX Designer",
+  "location": "Spain",
+  "description": "Pellentesque ut lectus nisl. Pellentesque semper nulla nec velit venenatis tempus. Integer rhoncus facilisis est id molestie. Praesent in lobortis lorem, quis congue ipsum.",
+  "type": "Half time",
+  "createdAt": "2023-03-27T09:52:07.318+00:00",
+  "updatedAt": "2023-03-27T09:52:07.318+00:00"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5502"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Marketing Manager",
+  "description": "We are looking for an experienced marketing manager to lead our team. The ideal candidate will have a proven track record of developing successful marketing strategies and be able to manage a team of marketing professionals.",
+  "location": "New York, NY",
+  "salary": "$90,000 - $110,000 per year",
+  "createdAt": "2022-01-03T08:15:00.000Z",
+  "updatedAt": "2022-10-30T16:20:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5504"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "UX Designer",
+  "description": "We are seeking a talented UX Designer to join our team. The ideal candidate will have a strong portfolio of work and be able to design and develop user-friendly interfaces for our web and mobile applications.",
+  "location": "Seattle, WA",
+  "salary": "$80,000 - $100,000 per year",
+  "createdAt": "2021-05-25T09:30:00.000Z",
+  "updatedAt": "2022-12-10T14:45:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5507"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Graphic Designer",
+  "description": "We are looking for a talented graphic designer to create stunning visuals and graphics for our website and marketing campaigns. The ideal candidate will have experience with Adobe Creative Suite and a strong portfolio of work.",
+  "location": "Austin, TX",
+  "salary": "$60,000 - $80,000 per year",
+  "createdAt": "2021-10-10T09:00:00.000Z",
+  "updatedAt": "2022-12-15T14:30:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5509"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Software Architect",
+  "description": "We are looking for a Software Architect to lead the design and development of our software systems. The ideal candidate will have experience with software development lifecycle and be proficient in at least one programming language.",
+  "location": "Denver, CO",
+  "salary": "$120,000 - $140,000 per year",
+  "createdAt": "2021-08-05T13:30:00.000Z",
+  "updatedAt": "2022-09-30T15:45:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5512"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full-stack Developer",
+  "description": "We are looking for a Full-stack Developer to join our team. The ideal candidate will have experience with both front-end and back-end development, as well as proficiency in popular programming languages such as JavaScript, Python or Ruby.",
+  "location": "Austin, TX",
+  "salary": "$100,000 - $120,000 per year",
+  "createdAt": "2022-03-10T09:00:00.000Z",
+  "updatedAt": "2022-11-15T12:30:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5505"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Data Analyst",
+  "description": "We are seeking a detail-oriented Data Analyst to join our team. The ideal candidate will have experience with data analysis and visualization tools, and be able to provide insights and recommendations based on data-driven insights.",
+  "location": "Los Angeles, CA",
+  "salary": "$60,000 - $80,000 per year",
+  "createdAt": "2022-02-20T11:00:00.000Z",
+  "updatedAt": "2022-08-15T12:30:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5506"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Sales Representative",
+  "description": "We are seeking a Sales Representative to help us expand our business. The ideal candidate will have a proven track record of achieving sales targets and be able to communicate effectively with clients and prospects.",
+  "location": "Boston, MA",
+  "salary": "$50,000 - $70,000 per year",
+  "createdAt": "2021-09-01T16:45:00.000Z",
+  "updatedAt": "2022-10-20T09:15:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d550c"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Marketing Manager",
+  "description": "We are looking for an experienced Marketing Manager to lead our marketing department. The ideal candidate will have a deep understanding of marketing strategies, and be able to develop and execute successful marketing campaigns.",
+  "location": "New York, NY",
+  "salary": "$100,000 - $120,000 per year",
+  "createdAt": "2021-12-15T14:30:00.000Z",
+  "updatedAt": "2022-11-30T16:00:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5511"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Product Manager",
+  "description": "We are seeking an experienced Product Manager to lead the development of our products. The ideal candidate will have a deep understanding of product management principles and be able to work closely with cross-functional teams.",
+  "location": "Los Angeles, CA",
+  "salary": "$120,000 - $140,000 per year",
+  "createdAt": "2022-02-10T15:00:00.000Z",
+  "updatedAt": "2022-12-05T17:30:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5514"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "React Developer",
+  "description": "We are looking for a React Developer to work on our front-end applications. The ideal candidate will have experience with React and Redux, as well as proficiency in front-end development technologies such as HTML, CSS and JavaScript.",
+  "location": "San Diego, CA",
+  "salary": "$80,000 - $100,000 per year",
+  "createdAt": "2022-01-15T13:30:00.000Z",
+  "updatedAt": "2022-11-20T16:00:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5515"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Mobile Developer",
+  "description": "We are seeking a Mobile Developer to work on our mobile applications. The ideal candidate will have experience with mobile development technologies such as React Native or Swift, as well as proficiency in front-end development technologies such as HTML, CSS and JavaScript.",
+  "location": "Miami, FL",
+  "salary": "$90,000 - $110,000 per year",
+  "createdAt": "2022-02-05T14:00:00.000Z",
+  "updatedAt": "2022-12-10T15:30:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d54fe"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full Stack Web Developer",
+  "location": "Netherlands",
+  "description": "Morbi sit amet nunc tristique, tempor libero a, rutrum velit. Sed mollis porttitor massa at fringilla. Aliquam ornare lectus enim, id pharetra arcu porta ut. Nulla sollicitudin luctus orci in aliquet. Phasellus eget purus mi. Etiam commodo vel leo non efficitur. Nullam et rutrum mi. Nunc porta erat est, eu pretium nibh mattis id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean faucibus, augue vel eleifend bibendum, sem lorem gravida justo, eleifend fringilla massa nisl non est.",
+  "type": "Full time",
+  "createdAt": "2023-03-30T09:52:07.318+00:00",
+  "updatedAt": "2023-03-30T09:52:07.318+00:00"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5501"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Software Engineer",
+  "description": "We are seeking a highly motivated software engineer to join our team. The ideal candidate will have experience with web development and be proficient in JavaScript, HTML, and CSS.",
+  "location": "San Francisco, CA",
+  "salary": "$100,000 - $120,000 per year",
+  "createdAt": "2021-07-15T14:30:00.000Z",
+  "updatedAt": "2022-11-20T10:45:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5503"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Accountant",
+  "description": "We are seeking a highly organized and detail-oriented accountant to join our team. The ideal candidate will have a strong understanding of accounting principles and be able to manage multiple accounts simultaneously.",
+  "location": "Chicago, IL",
+  "salary": "$70,000 - $90,000 per year",
+  "createdAt": "2021-12-01T13:00:00.000Z",
+  "updatedAt": "2022-09-05T18:30:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d550d"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Sales Representative",
+  "description": "We are seeking a Sales Representative to help us expand our customer base. The ideal candidate will have experience in sales and a proven track record of meeting or exceeding sales targets.",
+  "location": "Chicago, IL",
+  "salary": "$50,000 - $80,000 per year",
+  "createdAt": "2022-02-20T09:30:00.000Z",
+  "updatedAt": "2022-10-15T11:45:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d550e"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Front-end Developer",
+  "description": "We are looking for a talented Front-end Developer to create beautiful and responsive user interfaces. The ideal candidate will have experience with HTML, CSS, JavaScript and popular front-end frameworks such as React or Angular.",
+  "location": "San Francisco, CA",
+  "salary": "$90,000 - $110,000 per year",
+  "createdAt": "2021-09-10T11:00:00.000Z",
+  "updatedAt": "2022-12-01T14:00:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5510"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Data Analyst",
+  "description": "We are looking for a Data Analyst to help us make data-driven decisions. The ideal candidate will have experience with data analysis tools such as Excel or Tableau, and be able to communicate insights to non-technical stakeholders.",
+  "location": "Boston, MA",
+  "salary": "$70,000 - $90,000 per year",
+  "createdAt": "2021-10-20T10:30:00.000Z",
+  "updatedAt": "2022-09-01T12:15:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5513"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Back-end Developer",
+  "description": "We are seeking a Back-end Developer to work on our server-side applications. The ideal candidate will have experience with server-side languages such as Java, Python or PHP, as well as proficiency in database management.",
+  "location": "Washington, DC",
+  "salary": "$90,000 - $110,000 per year",
+  "createdAt": "2021-11-20T10:15:00.000Z",
+  "updatedAt": "2022-10-01T14:45:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5517"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Front-end Engineer",
+  "description": "We are seeking a Front-end Engineer to work on our user-facing applications. The ideal candidate will have experience with front-end technologies such as HTML, CSS, JavaScript and React, as well as proficiency in design tools such as Sketch or Figma.",
+  "location": "Portland, OR",
+  "salary": "$80,000 - $100,000 per year",
+  "createdAt": "2022-02-10T15:00:00.000Z",
+  "updatedAt": "2022-12-05T17:30:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5500"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Software Engineer",
+  "location": "Austria",
+  "description": "Aliquam a quam nec libero lacinia semper a non elit. Nullam vehicula est ligula. Sed luctus, ipsum vitae elementum aliquam, erat mauris venenatis ante, sit amet pharetra mauris velit ac augue. Nam in elit porta dolor ullamcorper elementum. Phasellus luctus ligula eu arcu semper bibendum.",
+  "type": "Hybrid",
+  "createdAt": "2023-03-20T09:52:07.318+00:00",
+  "updatedAt": "2023-03-20T09:52:07.318+00:00"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5508"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Human Resources Manager",
+  "description": "We are seeking an experienced Human Resources Manager to lead our HR department. The ideal candidate will have knowledge of HR policies and procedures, and be able to manage a team of HR professionals.",
+  "location": "Washington, D.C.",
+  "salary": "$100,000 - $120,000 per year",
+  "createdAt": "2022-03-20T12:00:00.000Z",
+  "updatedAt": "2022-11-25T11:30:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d550a"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Customer Service Representative",
+  "description": "We are seeking a Customer Service Representative to help us provide excellent service to our clients. The ideal candidate will have strong communication skills and be able to handle customer inquiries and complaints.",
+  "location": "Miami, FL",
+  "salary": "$30,000 - $40,000 per year",
+  "createdAt": "2022-01-10T10:15:00.000Z",
+  "updatedAt": "2022-07-20T17:00:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d550b"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Content Writer",
+  "description": "We are seeking a talented Content Writer to create engaging and informative content for our website and marketing campaigns. The ideal candidate will have experience with SEO and content marketing strategies.",
+  "location": "Portland, OR",
+  "salary": "$50,000 - $70,000 per year",
+  "createdAt": "2021-11-15T08:30:00.000Z",
+  "updatedAt": "2022-10-10T13:15:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d550f"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Operations Manager",
+  "description": "We are seeking an Operations Manager to oversee our day-to-day operations. The ideal candidate will have experience with operations management and be able to identify and implement process improvements.",
+  "location": "Seattle, WA",
+  "salary": "$80,000 - $100,000 per year",
+  "createdAt": "2022-01-05T13:45:00.000Z",
+  "updatedAt": "2022-11-15T16:30:00.000Z"
+},{
+  "_id": {
+    "$oid": "6444036efcdc9b0fbf1d5516"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "DevOps Engineer",
+  "description": "We are looking for a DevOps Engineer to help us automate and streamline our operations. The ideal candidate will have experience with cloud infrastructure such as AWS or Azure, as well as proficiency in scripting languages such as Python or Bash.",
+  "location": "Denver, CO",
+  "salary": "$110,000 - $130,000 per year",
+  "createdAt": "2021-12-10T11:45:00.000Z",
+  "updatedAt": "2022-11-05T13:15:00.000Z"
+},{
+  "_id": {
+    "$oid": "64440c81932d5df2c4a55269"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Sweden",
+  "description": "Some details",
+  "type": "[\"fullTime\"]",
+  "createdAt": {
+    "$date": "2023-04-22T16:34:09.697Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T16:34:09.697Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64440d15932d5df2c4a5526b"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Sweden",
+  "description": "Some details",
+  "type": "[\"fullTime\"]",
+  "createdAt": {
+    "$date": "2023-04-22T16:36:37.361Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T16:36:37.361Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64440d23932d5df2c4a5526d"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Sweden",
+  "description": "Some details",
+  "type": "[\"fullTime\"]",
+  "createdAt": {
+    "$date": "2023-04-22T16:36:51.137Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T16:36:51.137Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64440e65932d5df2c4a5526f"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Sweden",
+  "description": "Some details",
+  "type": "[\"fullTime\"]",
+  "createdAt": {
+    "$date": "2023-04-22T16:42:13.912Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T16:42:13.912Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64440eda932d5df2c4a55271"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Sweden",
+  "description": "Some details",
+  "createdAt": {
+    "$date": "2023-04-22T16:44:10.286Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T16:44:10.286Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64440f1d932d5df2c4a55273"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Sweden",
+  "description": "Some details",
+  "createdAt": {
+    "$date": "2023-04-22T16:45:17.900Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T16:45:17.900Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64440f6b932d5df2c4a55275"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Sweden",
+  "description": "Some details",
+  "createdAt": {
+    "$date": "2023-04-22T16:46:35.167Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T16:46:35.167Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644414f752b2ed8109cdd102"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:10:15.032Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T17:10:15.032Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6444150252b2ed8109cdd104"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:10:26.443Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T17:10:26.443Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6444157652b2ed8109cdd106"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:12:22.284Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T17:12:22.284Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644415ca52b2ed8109cdd108"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:13:46.992Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T17:13:46.992Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644415d052b2ed8109cdd10a"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:13:52.328Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T17:13:52.328Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644416b652b2ed8109cdd10c"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:17:42.474Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T17:17:42.474Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644416f052b2ed8109cdd10e"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:18:40.229Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-22T17:18:40.229Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6444171f52b2ed8109cdd110"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 1200005,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:19:27.588Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T12:07:27.141Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6444173252b2ed8109cdd113"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugalss",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:19:46.272Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T12:05:50.934Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6444175652b2ed8109cdd116"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "temporary",
+    "shifts"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perHour",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:20:22.359Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T11:44:37.866Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6444176052b2ed8109cdd119"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:20:32.260Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T12:26:29.029Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6444179752b2ed8109cdd11c"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:21:27.355Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T12:07:36.347Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644417f152b2ed8109cdd11f"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 120000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:22:57.301Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T10:41:44.030Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644418a852b2ed8109cdd122"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Full stack",
+  "location": "Portugal",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 80000,
+  "salaryTo": 125000,
+  "salaryType": "perYear",
+  "description": "some details",
+  "requirements": "some reqs",
+  "createdAt": {
+    "$date": "2023-04-22T17:26:00.534Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-22T10:04:54.966Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644fa1a72fd0f121f2e66d7a"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "da55",
+  "location": "sd",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 2000,
+  "salaryTo": 4000,
+  "salaryType": "perYear",
+  "description": "fgh",
+  "requirements": "ghf",
+  "createdAt": {
+    "$date": "2023-05-01T11:25:27.964Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T12:14:49.691Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644fa1c3cf10dad6de946399"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "da",
+  "location": "sd",
+  "jobType": [
+    "halfTime"
+  ],
+  "salaryFrom": 2000,
+  "salaryTo": 4000,
+  "salaryType": "perHour",
+  "description": "fgh",
+  "requirements": "ghf",
+  "createdAt": {
+    "$date": "2023-05-01T11:25:56.005Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T13:23:46.225Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644fa2575bb82e721eb43fad"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "gfhdfh",
+  "location": "hhh",
+  "jobType": [
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 2000,
+  "salaryTo": 4000,
+  "salaryType": "perYear",
+  "description": "dfgdfg",
+  "requirements": "hhhhh",
+  "createdAt": {
+    "$date": "2023-05-01T11:28:23.944Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-01T11:28:23.944Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6453bd5b43737a9a290158d1"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "HELLO SSR 3",
+  "location": "123",
+  "jobType": [
+    "halfTime",
+    "shifts",
+    "temporary"
+  ],
+  "salaryFrom": 2555,
+  "salaryTo": 3555,
+  "salaryType": "perHour",
+  "description": "7777",
+  "requirements": "6666",
+  "createdAt": {
+    "$date": "2023-05-04T14:12:43.741Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T17:48:47.406Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6453c19a43737a9a290158f7"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "HEY",
+  "location": "ghj",
+  "jobType": [
+    "shifts",
+    "halfTime",
+    "freelance"
+  ],
+  "salaryFrom": 2000,
+  "salaryTo": 4000,
+  "salaryType": "perHour",
+  "description": "jg",
+  "requirements": "hjghjj",
+  "createdAt": {
+    "$date": "2023-05-04T14:30:50.475Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T10:41:40.009Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6453c1b943737a9a290158fb"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "ssasadd",
+  "location": "gds",
+  "jobType": [
+    "halfTime"
+  ],
+  "salaryFrom": 2000,
+  "salaryTo": 4000,
+  "salaryType": "perMonth",
+  "description": "gsdgg",
+  "requirements": "ggg",
+  "createdAt": {
+    "$date": "2023-05-04T14:31:21.230Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T17:53:47.477Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645903992ae4a50d825e8959"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "ghjjg",
+  "location": "hgj",
+  "jobType": [
+    "fullTime",
+    "temporary"
+  ],
+  "salaryFrom": 67,
+  "salaryTo": 777,
+  "salaryType": "perHour",
+  "description": "jhkjhk",
+  "requirements": "jkyh",
+  "createdAt": {
+    "$date": "2023-05-08T14:13:45.521Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T14:13:45.521Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6459042e2ae4a50d825e8970"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "NEW ",
+  "location": "gg",
+  "jobType": [
+    "halfTime"
+  ],
+  "salaryFrom": 33,
+  "salaryTo": 555,
+  "salaryType": "perYear",
+  "description": "gfg",
+  "requirements": "g",
+  "createdAt": {
+    "$date": "2023-05-08T14:16:14.757Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T17:44:53.919Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645904ad2ae4a50d825e8980"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "g",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:18:21.551Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T14:18:21.551Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645904bd2ae4a50d825e8986"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "g",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:18:37.438Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T14:18:37.438Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645904d02ae4a50d825e8989"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "NEW NAME 2",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:18:56.947Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T17:33:26.974Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645905142ae4a50d825e898c"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "g",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:20:04.057Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T14:20:04.057Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645905262ae4a50d825e898f"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "fasf",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:20:22.024Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-22T10:04:05.759Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6459061d2ae4a50d825e8994"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "g",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:24:29.193Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T14:24:29.193Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645906252ae4a50d825e8997"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "g",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:24:37.728Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T12:11:55.566Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645906562ae4a50d825e899a"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "UX Designer",
+  "location": "Michigan",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:25:26.916Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-22T10:32:36.707Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645906e52ae4a50d825e899d"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "g",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:27:49.927Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T14:27:49.927Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645906f72ae4a50d825e89a4"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "g",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:28:07.991Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T12:12:08.442Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645907092ae4a50d825e89ab"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "Test",
+  "location": "g",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 5,
+  "salaryTo": 23,
+  "salaryType": "perMonth",
+  "description": "f",
+  "requirements": "f",
+  "createdAt": {
+    "$date": "2023-05-08T14:28:25.094Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T12:06:24.378Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645909bf2ae4a50d825e89da"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "NEW NAME",
+  "location": "NEW LOCATION",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 2,
+  "salaryTo": 25,
+  "salaryType": "perYear",
+  "description": "fdsg",
+  "requirements": "g",
+  "createdAt": {
+    "$date": "2023-05-08T14:39:59.504Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T12:06:30.634Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64590aa42ae4a50d825e89dd"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "A position!",
+  "location": "ddsfdsf",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 25,
+  "salaryTo": 25,
+  "salaryType": "perYear",
+  "description": "fdsg",
+  "requirements": "g",
+  "createdAt": {
+    "$date": "2023-05-08T14:43:48.236Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-22T10:05:11.250Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64590b2e2ae4a50d825e89e0"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "gfdgdfgdfg",
+  "location": "dasdfasfasfg",
+  "jobType": [
+    "temporary"
+  ],
+  "salaryFrom": 254,
+  "salaryTo": 555,
+  "salaryType": "perYear",
+  "description": "fdsg",
+  "requirements": "g",
+  "createdAt": {
+    "$date": "2023-05-08T14:46:06.811Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-22T15:10:27.631Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645915342ae4a50d825e8a76"
+  },
+  "employer": {
+    "$oid": "644156895c82e2c394a0511d"
+  },
+  "title": "dfg",
+  "location": "dfg",
+  "jobType": [
+    "halfTime"
+  ],
+  "salaryFrom": 255,
+  "salaryTo": 555,
+  "salaryType": "perYear",
+  "description": "jhhjk",
+  "requirements": "hjkhjk",
+  "createdAt": {
+    "$date": "2023-05-08T15:28:52.045Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-22T14:40:05.820Z"
+  },
+  "__v": 0
+}]

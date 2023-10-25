@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 
-import Button from "@/components/Button";
 import JobSummary from "../jobs/JobSummary";
-import ErrorMessage from "@/components/ErrorMessage";
 import JobDate from "../jobs/JobDate";
 
 import classes from "./SingleJobApp.module.css";

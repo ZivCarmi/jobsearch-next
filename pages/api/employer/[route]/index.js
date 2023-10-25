@@ -2,6 +2,7 @@ import connectDb from "@/server/utils/connectDb";
 import Employers from "@/models/Employer";
 import JobApplications from "@/models/JobApplication";
 import Jobs from "@/models/Job";
+import Seekers from "@/models/Seeker";
 
 export const getEmployerJobs = async (employerId, page = 1) => {
   try {
@@ -21,7 +22,6 @@ export const getEmployerJobs = async (employerId, page = 1) => {
       .populate({
         path: "jobs",
         model: Jobs,
-        // perDocumentLimit: 5,
         options: {
           sort: [{ _id: -1 }],
           limit,
@@ -32,55 +32,8 @@ export const getEmployerJobs = async (employerId, page = 1) => {
 
     const hasMore = skip + limit < jobsCount;
 
-    // const postedJobs = await Employers.aggregate([
-    //   {
-    //     $match: {
-    //       _id: new mongoose.Types.ObjectId(employerId),
-    //     },
-    //   },
-    //   {
-    //     $project: {
-    //       _id: 0,
-    //       jobs: 1,
-    //     },
-    //   },
-    //   { $unwind: "$jobs" },
-    //   {
-    //     $sort: {
-    //       jobs: -1,
-    //     },
-    //   },
-    //   {
-    //     $facet: {
-    //       data: [{ $skip: skip }, { $limit: limit }],
-    //       metadata: [
-    //         {
-    //           $count: "total",
-    //         },
-    //       ],
-    //     },
-    //   },
-    //   {
-    //     $lookup: {
-    //       from: "jobs",
-    //       localField: "data.jobs",
-    //       foreignField: "_id",
-    //       pipeline: [
-    //         {
-    //           $sort: { _id: -1 },
-    //         },
-    //       ],
-    //       as: "data",
-    //     },
-    //   },
-    // ]);
-
-    // const totalCount = postedJobs[0]?.metadata[0]?.total;
-    // const hasMore = skip + limit < totalCount;
-
     const results = {
-      // jobs: postedJobs[0]?.data || [],
-      jobs: postedJobs.jobs,
+      data: postedJobs.jobs,
       totalCount: jobsCount,
       pagination: {
         hasNextPage: hasMore,
@@ -101,14 +54,20 @@ export const getEmployerJobApps = async (employerId, page = 1) => {
     page = parseInt(page);
     const limit = 5;
     const skip = (page - 1) * limit;
-    const docsLength = await JobApplications.countDocuments();
+    const docsLength = await JobApplications.countDocuments({
+      employer: employerId,
+    });
     const hasMore = skip + limit < docsLength;
 
     const jobApps = await JobApplications.find({ employer: employerId })
       .sort({ _id: -1 })
       .limit(limit)
       .skip(skip)
-      .populate("seeker", "firstName lastName")
+      .populate({
+        path: "seeker",
+        select: "firstName lastName",
+        model: Seekers,
+      })
       .lean({ getters: true, virtuals: true });
 
     const results = {

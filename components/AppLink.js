@@ -16,10 +16,10 @@ const AppLink = (props) => {
           display: ${icon ? "flex" : "block"};
           border-radius: ${icon ? "50px" : "4px"};
           ${!icon ? "padding: 0.6rem 1rem" : ""};
-          ${icon ? "justify-content: center;" : ""}
-          ${icon ? "align-items: center;" : ""}
-          width: ${icon ? props.width || "32px" : ""};
-          height: ${icon ? props.height || "32px" : ""};
+          ${icon ? "justify-content: center" : ""};
+          ${icon ? "align-items: center" : ""};
+          ${icon ? "width:" + (props.width ? props.width : "32px") : ""};
+          ${icon ? "height:" + (props.height ? props.height : "32px") : ""};
         }
       `}</style>
     </>

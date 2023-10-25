@@ -13,16 +13,17 @@ const ApplyModal = ({ canApply }) => {
   const router = useRouter();
   const { jobId } = router.query;
   const user = useSelector(getUser);
+  const isVerified = user?.verified;
   const { data, error } = useFetch(`/api/jobs/${jobId}`);
 
   useEffect(() => {
-    if (!user?.verified) {
-      router.push("/complete-registration");
+    if (!isVerified) {
+      router.replace("/complete-registration");
     }
   }, [jobId]);
 
   if (error) return <p>There is an error.</p>;
-  if (!data) return <Spinner withOverlay />;
+  if (!data || !isVerified) return <Spinner withOverlay />;
 
   return (
     <Modal width="500px">

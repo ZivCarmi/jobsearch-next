@@ -11,7 +11,7 @@ const AvailableJobs = ({ results }) => {
   const [hasNextPage, setHasNextPage] = useState(results.hasNextPage);
   const [isLoading, setIsLoading] = useState(false);
   const intObserver = useRef();
-  const location = useRouter();
+  const router = useRouter();
 
   const lastJobRef = useCallback(
     (job) => {
@@ -43,21 +43,25 @@ const AvailableJobs = ({ results }) => {
     if (pageNum === 1) return;
 
     if (!isLoading && hasNextPage) {
-      // const searchParams = `${location.search ? location.search + "&" : "?"}`;
-      // fetcher.load(`${location.pathname}${searchParams}page=${pageNum}`);
+      let url = `/api${router.asPath}?page=${pageNum}`;
+
+      // if on search page
+      if (router.asPath.includes("?")) {
+        url = `/api${router.asPath}&page=${pageNum}`;
+      }
 
       const fetchMoreJobs = async () => {
         try {
           setIsLoading(true);
 
-          const response = await fetch(`/api/jobs?page=${pageNum}`);
+          const response = await fetch(url);
 
           const results = await response.json();
 
           setLoadedJobs((prevJobs) => [...prevJobs, ...results.data]);
           setHasNextPage(results.hasNextPage);
         } catch (error) {
-          console.log(error);
+          console.error(error);
         }
 
         setIsLoading(false);

@@ -16,6 +16,7 @@ const jobSchema = new Schema(
     title: {
       type: String,
       required: [true, "Title is required"],
+      // index: true,
     },
     location: {
       type: String,
@@ -57,17 +58,27 @@ const jobSchema = new Schema(
     description: {
       type: String,
       required: [true, "Description is required"],
+      // index: true,
     },
     requirements: {
       type: String,
       required: [true, "Requirements is required"],
     },
   },
-  { timestamps: true, toJSON: { getters: true } }
+  {
+    timestamps: true,
+    toObject: { getters: true, setters: true },
+    toJSON: { getters: true, setters: true },
+    runSettersOnQuery: true,
+  }
 );
+
+jobSchema.index({ title: "text", description: "text" });
 
 jobSchema.plugin(mongooseLeanGetters);
 
 const Job = models?.Jobs || model("Jobs", jobSchema);
+
+Job.createIndexes();
 
 export default Job;

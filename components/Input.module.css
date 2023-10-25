@@ -2,11 +2,7 @@
   position: relative;
 }
 
-.input.checkbox label {
-  height: auto;
-}
-
-.input input {
+.input input:not([type="checkbox"]):not([type="radio"]) {
   display: block;
   width: 100%;
   border: 1px solid #ccc;
@@ -15,41 +11,10 @@
   padding: var(--input-y-padding) var(--input-x-padding);
 }
 
-.input input[type="radio"] {
-  width: auto;
-  height: auto;
-  display: none;
-}
-
-.input input[type="checkbox"] {
-  width: 21px;
-  height: 21px;
-}
-
-.input.radio,
-.input.checkbox {
+.input:has([type="radio"]),
+.input:has([type="checkbox"]) {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
   flex: 1;
-}
-
-.input.checkbox {
-  gap: 0.6rem;
-}
-
-.input.radio label {
-  cursor: pointer;
-  border: 1px solid var(--orange);
-  transition: all 0.1s ease-in-out;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.input.radio input:checked + label {
-  background-color: var(--orange);
-  color: white;
 }

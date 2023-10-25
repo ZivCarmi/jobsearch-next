@@ -1,4 +1,3 @@
-import Input from "@/components/Input";
 import Select from "@/components/Select";
 import Label from "@/components/Label";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -25,26 +24,14 @@ const Salary = ({ data }) => {
               <div className={classes.label}>FROM</div>
               <div className={fromInputClasses}>
                 <span>$</span>
-                <Input
-                  input={{
-                    type: "number",
-                    id: "salaryFrom",
-                    ...from.attributes,
-                  }}
-                />
+                <input type="number" id="salaryFrom" {...from.attributes} />
               </div>
             </label>
             <label>
               <div className={classes.label}>TO</div>
               <div className={toInputClasses}>
                 <span>$</span>
-                <Input
-                  input={{
-                    type: "number",
-                    id: "salaryTo",
-                    ...to.attributes,
-                  }}
-                />
+                <input type="number" id="salaryTo" {...to.attributes} />
               </div>
             </label>
           </div>
@@ -57,9 +44,9 @@ const Salary = ({ data }) => {
           }}
         />
       </div>
-      <ErrorMessage>{data.from.isError}</ErrorMessage>
-      <ErrorMessage>{data.to.isError}</ErrorMessage>
-      <ErrorMessage>{data.type.isError}</ErrorMessage>
+      <ErrorMessage errors={from.isError} />
+      <ErrorMessage errors={to.isError} />
+      <ErrorMessage errors={type.isError} />
     </div>
   );
 };

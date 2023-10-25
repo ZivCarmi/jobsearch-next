@@ -39,6 +39,12 @@ const companySchema = Schema({
     }),
   },
   websiteUrl: String,
+  customApply: {
+    required: true,
+    default: false,
+    type: Boolean,
+  },
+  applicationUrl: String,
 });
 
 const employerSchema = new Schema(
