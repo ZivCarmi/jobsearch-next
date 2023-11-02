@@ -32,55 +32,62 @@ const handler = async (req, res) => {
     const { title, location } = query;
     let aggregation = [];
 
+    // if (title) {
+    //   aggregation.push(
+    //     {
+    //       $search: {
+    //         index: "autocomplete",
+    //         compound: {
+    //           should: [
+    //             {
+    //               autocomplete: {
+    //                 query: title,
+    //                 path: "title",
+    //                 fuzzy: {
+    //                   maxEdits: 2,
+    //                   prefixLength: 1,
+    //                   maxExpansions: 256,
+    //                 },
+    //                 score: { boost: { value: 5 } },
+    //               },
+    //             },
+    //             {
+    //               autocomplete: {
+    //                 query: title,
+    //                 path: "description",
+    //               },
+    //             },
+    //           ],
+    //         },
+    //         highlight: {
+    //           path: "title",
+    //         },
+    //       },
+    //     },
+    //     {
+    //       $project: {
+    //         title: 1,
+    //         score: { $meta: "searchScore" },
+    //       },
+    //     },
+    //     { $sort: { score: { $meta: "textScore" } } },
+    //     { $group: { _id: "$title", score: { $first: "$score" } } }
+    //   );
+    // }
+
     if (title) {
       aggregation.push(
-        {
-          $search: {
-            index: "autocomplete",
-            compound: {
-              should: [
-                {
-                  autocomplete: {
-                    query: title,
-                    path: "title",
-                    fuzzy: {
-                      maxEdits: 2,
-                      prefixLength: 1,
-                      maxExpansions: 256,
-                    },
-                    score: { boost: { value: 5 } },
-                  },
-                },
-                {
-                  autocomplete: {
-                    query: title,
-                    path: "description",
-                  },
-                },
-              ],
-            },
-            highlight: {
-              path: "title",
-            },
-          },
-        },
-        {
-          $project: {
-            title: 1,
-            score: { $meta: "searchScore" },
-          },
-        },
-        { $sort: { score: { $meta: "textScore" } } },
-        { $group: { _id: "$title", score: { $first: "$score" } } }
+        { $match: { title: { $regex: title, $options: "i" } } },
+        { $group: { _id: `$title` } }
       );
     }
 
-    // if (location) {
-    //   aggregation.push(
-    //     { $match: { location: { $regex: location, $options: "i" } } },
-    //     { $group: { _id: `$location` } }
-    //   );
-    // }
+    if (location) {
+      aggregation.push(
+        { $match: { location: { $regex: location, $options: "i" } } },
+        { $group: { _id: `$location` } }
+      );
+    }
 
     aggregation.push({ $limit: 6 });
 
