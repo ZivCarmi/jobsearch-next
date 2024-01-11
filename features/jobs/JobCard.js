@@ -17,7 +17,7 @@ const JobCard = forwardRef(({ job }, ref) => {
     <li className={classes.card} ref={ref}>
       <div className={classes.wrapper}>
         <Link
-          href={`${router.pathname}/?jobId=${job._id}`}
+          href={`${router.pathname}/${job._id}`}
           // href={`${router.pathname}/?jobId=${job._id}&redirect=${router.asPath}`}
           // as={`${router.pathname}/${job._id}`}
           shallow={true}
