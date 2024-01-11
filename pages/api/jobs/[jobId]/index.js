@@ -21,19 +21,19 @@ export const getJob = async (jobId, fields = "") => {
 };
 
 const handler = async (req, res) => {
-  const { id } = req.query;
+  const { jobId } = req.query;
   const { uid } = req.headers;
 
   console.log("in handler");
 
-  if (!id) {
+  if (!jobId) {
     return res.status(400).end();
   }
 
   if (req.method === "GET") {
     console.log("in GET");
 
-    const result = await getJob(id);
+    const result = await getJob(jobId);
 
     return res.json(result);
   }
@@ -44,7 +44,7 @@ const handler = async (req, res) => {
     try {
       await connectDb();
 
-      const existingJob = await Jobs.findById(id);
+      const existingJob = await Jobs.findById(jobId);
 
       if (!existingJob) {
         return res.status(404).end();
@@ -58,7 +58,7 @@ const handler = async (req, res) => {
         return res.status(422).json({ errors: validateJob.errors });
       }
 
-      await Jobs.findByIdAndUpdate(id, validateJob.data);
+      await Jobs.findByIdAndUpdate(jobId, validateJob.data);
 
       return res.status(204).end();
     } catch (error) {
