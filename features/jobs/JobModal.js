@@ -8,7 +8,9 @@ import useFetch from "@/hooks/useFetch";
 const JobModal = () => {
   const router = useRouter();
   const { jobId } = router.query;
-  const { data, error } = useFetch(`/api/jobs/${jobId}`);
+  const { data, error } = useFetch(
+    `${process.env.NEXT_PUBLIC_SITE_URL}/api/jobs/${jobId}`
+  );
 
   console.log(jobId, data, error);
 
