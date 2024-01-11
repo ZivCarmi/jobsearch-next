@@ -11,12 +11,14 @@ import classes from "./JobCard.module.css";
 const JobCard = forwardRef(({ job }, ref) => {
   const router = useRouter();
 
+  console.log(router.pathname, router.asPath);
+
   return (
     <li className={classes.card} ref={ref}>
       <div className={classes.wrapper}>
         <Link
           href={`${router.pathname}/?jobId=${job._id}&redirect=${router.asPath}`}
-          as={`${router.pathname}/${job._id}`}
+          // as={`${router.pathname}/${job._id}`}
           shallow={true}
           className={classes.viewLink}
         />
