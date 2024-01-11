@@ -35,8 +35,6 @@ function useFetch(url, options = {}) {
       dispatch({ type: "loading" });
 
       try {
-        console.log("before fetching...", url, options);
-
         const response = await fetch(url, options);
         if (!response.ok) {
           throw new Error(response.statusText);
