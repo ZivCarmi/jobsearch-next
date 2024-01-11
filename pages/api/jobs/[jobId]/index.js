@@ -1,6 +1,7 @@
 import Jobs from "@/models/Job";
 import connectDb from "@/server/utils/connectDb";
 import { isValidJob } from "@/server/utils/validation";
+import Employer from "@/models/Employer";
 
 export const getJob = async (jobId, fields = "") => {
   try {
@@ -9,8 +10,8 @@ export const getJob = async (jobId, fields = "") => {
     await connectDb();
 
     const fetchedJob = await Jobs.findById(jobId, fields)
-      .populate("employer", "company")
-      // .populate({ path: "employer", select: "company", model: Employers })
+      // .populate("employer", "company")
+      .populate({ path: "employer", select: "company", model: Employer })
       .lean({ getters: true });
 
     console.log("line 14", fetchedJob);

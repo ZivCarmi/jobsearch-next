@@ -33,7 +33,12 @@ const middleware = async (request) => {
     if (token) return NextResponse.redirect(new URL("/", request.url));
   } else {
     try {
+      console.log("IN TRY BEFORE VERIFY...");
+
       const { userInfo } = await verify(token, process.env.ACCESS_TOKEN_SECRET);
+
+      console.log("IN TRY...");
+
       const userId = userInfo._id;
       const userType = userInfo.type;
       const isUserVerified = userInfo.verified;
@@ -94,7 +99,10 @@ const middleware = async (request) => {
         },
       });
     } catch (error) {
+      console.log("BEFORE CATCH - IF REQ IS GET");
+
       if (request.method === "GET") {
+        console.log("IN MIDDLEWARE CATCH - IF REQ IS GET");
         if (pathname.startsWith("/api/jobs") || pathname.startsWith("/jobs"))
           return NextResponse.next();
       }
