@@ -5,6 +5,7 @@ import Employer from "@/models/Employer";
 
 export const getJob = async (jobId, fields = "") => {
   try {
+    console.log("before connect");
     await connectDb();
 
     const fetchedJob = await Jobs.findById(jobId, fields)
@@ -23,11 +24,15 @@ const handler = async (req, res) => {
   const { jobId } = req.query;
   const { uid } = req.headers;
 
+  console.log("in handler");
+
   if (!jobId) {
     return res.status(400).end();
   }
 
   if (req.method === "GET") {
+    console.log("in GET");
+
     const result = await getJob(jobId);
 
     return res.json(result);
