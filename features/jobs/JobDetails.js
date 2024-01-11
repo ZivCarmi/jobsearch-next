@@ -10,6 +10,8 @@ import classes from "./JobDetails.module.css";
 const JobDetails = ({ job }) => {
   const company = job?.employer?.company;
 
+  console.log("in job details, wtf?");
+
   return (
     <div className={classes.card}>
       <div className={classes.heading}>

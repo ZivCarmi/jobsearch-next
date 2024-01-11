@@ -94,12 +94,8 @@ const middleware = async (request) => {
         },
       });
     } catch (error) {
-      console.log("BEFORE CATCH - IF REQ IS GET");
-
       if (request.method === "GET") {
         if (pathname.startsWith("/api/jobs") || pathname.startsWith("/jobs")) {
-          console.log("IN MIDDLEWARE CATCH - IF STARTS WITH");
-
           return NextResponse.next();
         }
       }

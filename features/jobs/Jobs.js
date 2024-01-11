@@ -10,6 +10,8 @@ const Jobs = ({ jobs, canApply }) => {
   const router = useRouter();
   const { jobId, apply } = router.query;
 
+  console.log(jobId, apply);
+
   return (
     <Section>
       <Container>

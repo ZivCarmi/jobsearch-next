@@ -10,6 +10,8 @@ const JobModal = () => {
   const { jobId } = router.query;
   const { data, error } = useFetch(`/api/jobs/${jobId}`);
 
+  console.log(jobId, data, error);
+
   if (error) return <p>There is an error.</p>;
   if (!data) return <Spinner withOverlay />;
 
