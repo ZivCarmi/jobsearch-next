@@ -1,6 +1,6 @@
 import Section from "@/components/Section";
 import ApplyCard from "@/features/jobs/ApplyCard";
-import { getJob } from "@/pages/api/jobs/[jobId]";
+import { getJob } from "@/pages/api/jobs/[id]";
 import { getSeeker } from "@/pages/api/seeker";
 import Link from "next/link";
 import { IoIosClose } from "react-icons/io";

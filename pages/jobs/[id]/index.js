@@ -1,6 +1,6 @@
 import Section from "@/components/Section";
 import JobDetails from "@/features/jobs/JobDetails";
-import { getJob } from "@/pages/api/jobs/[jobId]";
+import { getJob } from "@/pages/api/jobs/[id]";
 
 const SingleJob = (props) => {
   return (
@@ -13,9 +13,9 @@ const SingleJob = (props) => {
 export default SingleJob;
 
 export const getServerSideProps = async ({ params }) => {
-  const { jobId } = params;
+  const { id } = params;
 
-  const result = await getJob(jobId);
+  const result = await getJob(id);
 
   return {
     props: {
