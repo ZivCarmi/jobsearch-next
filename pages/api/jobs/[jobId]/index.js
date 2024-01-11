@@ -9,8 +9,8 @@ export const getJob = async (jobId, fields = "") => {
     await connectDb();
 
     const fetchedJob = await Jobs.findById(jobId, fields)
-      // .populate("employer", "company")
-      .populate({ path: "employer", select: "company", model: Employer })
+      .populate("employer", "company")
+      // .populate({ path: "employer", select: "company", model: Employer })
       .lean({ getters: true });
 
     return fetchedJob;

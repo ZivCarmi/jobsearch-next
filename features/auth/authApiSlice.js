@@ -49,8 +49,6 @@ export const authApiSlice = apiSlice.injectEndpoints({
         try {
           const { data } = await queryFulfilled;
 
-          console.log(data);
-
           if (!data.user?.verified) {
             dispatch(setIsNewUser(true));
           }
@@ -58,7 +56,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
           dispatch(setCredentials(data));
         } catch (err) {
           if (err.error.originalStatus !== 401) {
-            console.error(err);
+            return;
           }
         }
       },
