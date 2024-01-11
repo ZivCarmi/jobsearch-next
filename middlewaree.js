@@ -95,10 +95,6 @@ const middleware = async (request) => {
       });
     } catch (error) {
       if (request.method === "GET") {
-        console.log(
-          pathname,
-          pathname.startsWith("/api/jobs") || pathname.startsWith("/jobs")
-        );
         if (pathname.startsWith("/api/jobs") || pathname.startsWith("/jobs")) {
           return NextResponse.next();
         }
