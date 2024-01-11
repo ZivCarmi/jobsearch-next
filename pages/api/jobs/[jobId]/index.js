@@ -5,16 +5,12 @@ import Employer from "@/models/Employer";
 
 export const getJob = async (jobId, fields = "") => {
   try {
-    console.log("attempting connection");
-
     await connectDb();
 
     const fetchedJob = await Jobs.findById(jobId, fields)
       // .populate("employer", "company")
       .populate({ path: "employer", select: "company", model: Employer })
       .lean({ getters: true });
-
-    console.log("line 14", fetchedJob);
 
     return fetchedJob;
   } catch (error) {
@@ -27,15 +23,11 @@ const handler = async (req, res) => {
   const { jobId } = req.query;
   const { uid } = req.headers;
 
-  console.log("in handler");
-
   if (!jobId) {
     return res.status(400).end();
   }
 
   if (req.method === "GET") {
-    console.log("getting job...");
-
     const result = await getJob(jobId);
 
     return res.json(result);

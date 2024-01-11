@@ -9,7 +9,9 @@ import { BASE_URL } from "@/config";
 const JobModal = () => {
   const router = useRouter();
   const { jobId } = router.query;
-  const { data, error } = useFetch(`${BASE_URL}/api/jobs/${jobId}`);
+  const { data, error } = useFetch(`${BASE_URL}/api/jobs/${jobId}`, {
+    cache: "no-cache",
+  });
 
   console.log(`${BASE_URL}/api/jobs/${jobId}`);
 
