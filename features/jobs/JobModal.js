@@ -4,13 +4,14 @@ import Spinner from "@/components/Spinner";
 import JobDetails from "./JobDetails";
 import Modal from "@/components/Modal";
 import useFetch from "@/hooks/useFetch";
+import { BASE_URL } from "@/config";
 
 const JobModal = () => {
   const router = useRouter();
   const { jobId } = router.query;
-  const { data, error } = useFetch(
-    `${process.env.NEXT_PUBLIC_SITE_URL}/api/jobs/${jobId}`
-  );
+  const { data, error } = useFetch(`${BASE_URL}/api/jobs/${jobId}`);
+
+  console.log(`${BASE_URL}/api/jobs/${jobId}`);
 
   console.log(jobId, data, error);
 
