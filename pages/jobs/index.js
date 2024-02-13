@@ -11,8 +11,6 @@ export const getServerSideProps = async ({ req, query }) => {
   const { page } = query;
   const props = {};
 
-  console.log("in getServerSideProps of /jobs");
-
   if (utype === "seeker") {
     props.jobs = await getAllJobsWithApplyCondition(uid, page).then((res) =>
       JSON.parse(JSON.stringify(res))
@@ -26,8 +24,6 @@ export const getServerSideProps = async ({ req, query }) => {
       JSON.parse(JSON.stringify(res))
     );
   }
-
-  console.log("props of getServerSideProps", props);
 
   return {
     props,
