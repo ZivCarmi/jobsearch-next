@@ -1,24 +1,19 @@
 import Link from "next/link";
 import { BiRightArrowAlt } from "react-icons/bi";
 
+import Section from "@/components/Section";
+import useSWR from "swr";
 import Container from "../components/Container";
 import Search from "../features/jobs/Search";
-import Section from "@/components/Section";
 import classes from "./Home.module.css";
-import { useEffect, useState } from "react";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const HomePage = () => {
-  const [data, setData] = useState(null);
-  const [isLoading, setLoading] = useState(true);
+  const { data, error, isLoading } = useSWR("/api/search/jobs", fetcher);
 
-  useEffect(() => {
-    fetch("/api/search/jobs")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, []);
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
 
   console.log(data, isLoading);
 
