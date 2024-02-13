@@ -1,5 +1,6 @@
 import Jobs from "@/models/Job";
 import { getAllJobs, getAllJobsWithApplyCondition } from "../jobs";
+import connectDb from "@/server/utils/connectDb";
 
 export const getSearchedJobs = async (headers, query) => {
   const { uid, utype } = headers;
@@ -38,49 +39,6 @@ const handler = async (req, res) => {
     console.log(query);
     console.log(title, location);
 
-    // if (title) {
-    //   aggregation.push(
-    //     {
-    //       $search: {
-    //         index: "autocomplete",
-    //         compound: {
-    //           should: [
-    //             {
-    //               autocomplete: {
-    //                 query: title,
-    //                 path: "title",
-    //                 fuzzy: {
-    //                   maxEdits: 2,
-    //                   prefixLength: 1,
-    //                   maxExpansions: 256,
-    //                 },
-    //                 score: { boost: { value: 5 } },
-    //               },
-    //             },
-    //             {
-    //               autocomplete: {
-    //                 query: title,
-    //                 path: "description",
-    //               },
-    //             },
-    //           ],
-    //         },
-    //         highlight: {
-    //           path: "title",
-    //         },
-    //       },
-    //     },
-    //     {
-    //       $project: {
-    //         title: 1,
-    //         score: { $meta: "searchScore" },
-    //       },
-    //     },
-    //     { $sort: { score: { $meta: "textScore" } } },
-    //     { $group: { _id: "$title", score: { $first: "$score" } } }
-    //   );
-    // }
-
     if (title) {
       aggregation.push(
         { $match: { title: { $regex: title, $options: "i" } } },
@@ -100,6 +58,8 @@ const handler = async (req, res) => {
     aggregation.push({ $limit: 6 });
 
     try {
+      await connectDb();
+
       const fetchedJobs = await Jobs.aggregate(aggregation);
 
       console.log(fetchedJobs);

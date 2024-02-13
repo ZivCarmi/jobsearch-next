@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import classes from "./AutoComplete.module.css";
+import { useRouter } from "next/router";
 
 const AutoComplete = ({
   input: { name, ...inputProps },
@@ -9,6 +10,7 @@ const AutoComplete = ({
   clearErrors,
   requestUrl,
 }) => {
+  const router = useRouter();
   const [options, setOptions] = useState([]);
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const optionsRef = useRef(null);
@@ -19,7 +21,11 @@ const AutoComplete = ({
     }
 
     try {
-      const response = await fetch(`${requestUrl}/?${name}=${value}`);
+      console.log(router);
+
+      const response = await fetch(
+        `https://jobsearch-next.vercel.app${requestUrl}/?${name}=${value}`
+      );
 
       console.log(`${requestUrl}/?${name}=${value}`);
 
