@@ -26,7 +26,7 @@ const middleware = async (request) => {
   const token = request.cookies.get("token")?.value;
   const { pathname } = request.nextUrl;
 
-  console.log("In middleware");
+  console.log("In middleware", pathname);
 
   // Authenticated users that visit the login and register pages will be redirected to home page.
   if (pathname === "/login" || pathname === "/register") {
