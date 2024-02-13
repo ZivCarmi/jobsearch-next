@@ -32,6 +32,9 @@ const handler = async (req, res) => {
     const { title, location } = query;
     let aggregation = [];
 
+    console.log(query);
+    console.log(title, location);
+
     // if (title) {
     //   aggregation.push(
     //     {
@@ -88,6 +91,8 @@ const handler = async (req, res) => {
         { $group: { _id: `$location` } }
       );
     }
+
+    console.log(aggregation);
 
     aggregation.push({ $limit: 6 });
 
