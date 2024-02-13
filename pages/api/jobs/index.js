@@ -90,6 +90,8 @@ export const getAllJobsWithApplyCondition = async (
 const handler = async (req, res) => {
   const { uid, utype } = req.headers;
 
+  console.log("heree");
+
   if (req.method === "GET") {
     const { page, ids } = req.query;
     const requestedQuery = {};

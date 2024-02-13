@@ -10,7 +10,7 @@ import classes from "./Home.module.css";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const HomePage = () => {
-  const { data, error, isLoading } = useSWR("/api/search/jobs", fetcher);
+  const { data, error, isLoading } = useSWR("/api/jobs", fetcher);
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
