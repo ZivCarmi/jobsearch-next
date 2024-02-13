@@ -10,8 +10,6 @@ const Jobs = ({ jobs, canApply }) => {
   const router = useRouter();
   const { jobId, apply } = router.query;
 
-  console.log(router);
-
   return (
     <Section>
       <Container>
@@ -20,7 +18,7 @@ const Jobs = ({ jobs, canApply }) => {
         ) : (
           <p>No jobs found :(</p>
         )}
-        {jobId && !apply && <JobModal />}
+        {/* {jobId && !apply && <JobModal />} */}
         {jobId && apply && <ApplyModal canApply={canApply} />}
       </Container>
     </Section>

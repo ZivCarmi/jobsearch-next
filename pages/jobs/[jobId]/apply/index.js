@@ -1,3 +1,4 @@
+import Container from "@/components/Container";
 import Section from "@/components/Section";
 import ApplyCard from "@/features/jobs/ApplyCard";
 import { getJob } from "@/pages/api/jobs/[jobId]";
@@ -7,14 +8,16 @@ import { IoIosClose } from "react-icons/io";
 
 const ApplyPage = ({ job, canApply }) => {
   return (
-    <Section fluid>
-      <h1>
-        {job?.title} - {job?.employer.company.name}
-        <Link href="/jobs">
-          <IoIosClose size={45} color="white" />
-        </Link>
-      </h1>
-      <ApplyCard canApply={canApply} />
+    <Section className="flex items-center justify-center h-svh">
+      <Container width="1200px">
+        <h1>
+          {job?.title} - {job?.employer.company.name}
+          <Link href="/jobs">
+            <IoIosClose size={45} color="white" />
+          </Link>
+        </h1>
+        <ApplyCard canApply={canApply} />
+      </Container>
     </Section>
   );
 };

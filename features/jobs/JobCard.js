@@ -1,11 +1,9 @@
 import { useRouter } from "next/router";
 import { forwardRef } from "react";
 import Link from "next/link";
-
 import CompanyIcon from "../company/CompanyIcon";
 import JobDate from "./JobDate";
 import ApplyButton from "./ApplyButton";
-
 import classes from "./JobCard.module.css";
 
 const JobCard = forwardRef(({ job }, ref) => {
@@ -15,8 +13,9 @@ const JobCard = forwardRef(({ job }, ref) => {
     <li className={classes.card} ref={ref}>
       <div className={classes.wrapper}>
         <Link
-          href={`${router.pathname}/?jobId=${job._id}`}
-          as={`${router.pathname}/job/${job._id}`}
+          href={`${router.pathname}/${job._id}`}
+          // href={`${router.pathname}/?jobId=${job._id}`}
+          // as={`${router.pathname}/${job._id}`}
           shallow={true}
           className={classes.viewLink}
         />

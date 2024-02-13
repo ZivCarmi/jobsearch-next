@@ -1,9 +1,7 @@
-import classes from "./Section.module.css";
+import { cn } from "@/client/utils";
 
-const Section = ({ fluid, children, className }) => {
-  const sectionClasses = `${fluid ? "" : classes.section} ${className || ""}`;
-
-  return <section className={sectionClasses}>{children}</section>;
+const Section = ({ children, className = "" }) => {
+  return <section className={cn("p-8", className)}>{children}</section>;
 };
 
 export default Section;

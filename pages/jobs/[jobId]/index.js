@@ -1,3 +1,4 @@
+import Container from "@/components/Container";
 import Section from "@/components/Section";
 import JobDetails from "@/features/jobs/JobDetails";
 import { getJob } from "@/pages/api/jobs/[jobId]";
@@ -5,7 +6,9 @@ import { getJob } from "@/pages/api/jobs/[jobId]";
 const SingleJob = (props) => {
   return (
     <Section>
-      <JobDetails job={props.job} />
+      <Container width="800px">
+        <JobDetails job={props.job} className="shadow-2xl" />
+      </Container>
     </Section>
   );
 };

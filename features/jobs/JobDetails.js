@@ -1,17 +1,15 @@
-import { FaArrowAltCircleRight } from "react-icons/fa";
-
 import Favorite from "@/components/Favorite";
 import CompanyIcon from "../company/CompanyIcon";
-import JobSummary from "./JobSummary";
 import JobDate from "./JobDate";
-
 import classes from "./JobDetails.module.css";
+import JobSummary from "./JobSummary";
+import { cn } from "@/client/utils";
 
-const JobDetails = ({ job }) => {
+const JobDetails = ({ job, className = "" }) => {
   const company = job?.employer?.company;
 
   return (
-    <div className={classes.card}>
+    <div className={cn("p-8", className)}>
       <div className={classes.heading}>
         <div className={classes.left}>
           <CompanyIcon className={classes.icon} company={company} />

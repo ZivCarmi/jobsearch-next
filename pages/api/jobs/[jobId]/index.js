@@ -1,7 +1,6 @@
 import Jobs from "@/models/Job";
 import connectDb from "@/server/utils/connectDb";
 import { isValidJob } from "@/server/utils/validation";
-import Employer from "@/models/Employer";
 
 export const getJob = async (jobId, fields = "") => {
   try {
@@ -9,7 +8,6 @@ export const getJob = async (jobId, fields = "") => {
 
     const fetchedJob = await Jobs.findById(jobId, fields)
       .populate("employer", "company")
-      // .populate({ path: "employer", select: "company", model: Employer })
       .lean({ getters: true });
 
     return fetchedJob;
@@ -22,8 +20,6 @@ export const getJob = async (jobId, fields = "") => {
 const handler = async (req, res) => {
   const { jobId } = req.query;
   const { uid } = req.headers;
-
-  console.log("in api/jobs/[jobId] route");
 
   if (!jobId) {
     return res.status(400).end();

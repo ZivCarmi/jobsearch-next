@@ -43,7 +43,7 @@ const ApplyDialog = () => {
         You may track the application process through your account.
       </p>
       <div className={classes.actions}>
-        <AppLink href={router.pathname} shallow={true}>
+        <AppLink href="/jobs" shallow={true}>
           Close
         </AppLink>
         <AppLink href={`/myaccount/job-applications/${jobAppID}`} replace>
@@ -55,7 +55,7 @@ const ApplyDialog = () => {
     <>
       <p>Your information will be send to the employer, continue apply?</p>
       <div className={classes.actions}>
-        <AppLink href={router.pathname} shallow={true}>
+        <AppLink href="/jobs" shallow={true}>
           Cancel
         </AppLink>
         <Button button={{ onClick: applyHandler }}>
