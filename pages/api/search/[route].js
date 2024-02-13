@@ -28,10 +28,13 @@ export const getSearchedJobs = async (headers, query) => {
 const handler = async (req, res) => {
   const { query } = req;
 
+  console.log("in api/search");
+
   if (query.route === "jobs-board") {
     const { title, location } = query;
     let aggregation = [];
 
+    console.log("in api/search/jobs-board");
     console.log(query);
     console.log(title, location);
 

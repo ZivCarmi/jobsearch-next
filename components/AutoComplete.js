@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import classes from "./AutoComplete.module.css";
 
 const AutoComplete = ({
-  input,
+  input: { name, ...inputProps },
   register,
   setValue,
   clearErrors,
@@ -19,9 +19,13 @@ const AutoComplete = ({
     }
 
     try {
-      const response = await fetch(`${requestUrl}/?${input.name}=${value}`);
+      const response = await fetch(`${requestUrl}/?${name}=${value}`);
+
+      console.log(`${requestUrl}/?${name}=${value}`);
 
       if (!response.ok) return;
+
+      console.log(`passed response.ok`);
 
       const responseJson = await response.json();
 
@@ -38,7 +42,7 @@ const AutoComplete = ({
   };
 
   const optionHandler = (option) => {
-    setValue(input.name, option);
+    setValue(name, option);
     setIsOptionsOpen(false);
   };
 
@@ -60,8 +64,8 @@ const AutoComplete = ({
       <input
         type="text"
         className={classes.input}
-        {...input}
-        {...register(input.name, { onChange: inputHandler })}
+        {...inputProps}
+        {...register(name, { onChange: inputHandler })}
       />
       {options && isOptionsOpen && (
         <div className={classes.autoComplete} ref={optionsRef}>
