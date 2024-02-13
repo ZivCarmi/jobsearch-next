@@ -23,9 +23,7 @@ const AutoComplete = ({
     try {
       console.log(router);
 
-      const response = await fetch(
-        `https://jobsearch-next.vercel.app${requestUrl}/?${name}=${value}`
-      );
+      const response = await fetch(`${requestUrl}?${name}=${value}`);
 
       console.log(`${requestUrl}/?${name}=${value}`);
 

@@ -5,8 +5,23 @@ import Container from "../components/Container";
 import Search from "../features/jobs/Search";
 import Section from "@/components/Section";
 import classes from "./Home.module.css";
+import { useEffect, useState } from "react";
 
 const HomePage = () => {
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/search/jobs")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  console.log(data, isLoading);
+
   return (
     <>
       <Section className={classes.search}>
