@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-
 import classes from "./AutoComplete.module.css";
-import { useRouter } from "next/router";
+import useSWR from "swr";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const AutoComplete = ({
   input: { name, ...inputProps },
@@ -10,39 +11,17 @@ const AutoComplete = ({
   clearErrors,
   requestUrl,
 }) => {
-  const router = useRouter();
-  const [options, setOptions] = useState([]);
-  const [isOptionsOpen, setIsOptionsOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const { data, error } = useSWR(
+    inputValue ? `/${requestUrl}?${name}=${inputValue}` : null,
+    fetcher
+  );
+  const [isOptionsOpen, setIsOptionsOpen] = useState(true);
   const optionsRef = useRef(null);
-
-  const sendRequest = async (value) => {
-    if (!value) {
-      return setOptions([]);
-    }
-
-    try {
-      console.log(router);
-
-      const response = await fetch(`${requestUrl}?${name}=${value}`);
-
-      console.log(`${requestUrl}/?${name}=${value}`);
-
-      if (!response.ok) return;
-
-      console.log(`passed response.ok`);
-
-      const responseJson = await response.json();
-
-      setOptions(responseJson);
-      setIsOptionsOpen(true);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const inputHandler = (e) => {
     clearErrors();
-    sendRequest(e.target.value);
+    setInputValue(e.target.value);
   };
 
   const optionHandler = (option) => {
@@ -70,11 +49,13 @@ const AutoComplete = ({
         className={classes.input}
         {...inputProps}
         {...register(name, { onChange: inputHandler })}
+        onClick={() => setIsOptionsOpen(true)}
       />
-      {options && isOptionsOpen && (
+      {error && <p>Failed to fetch...</p>}
+      {data && isOptionsOpen && (
         <div className={classes.autoComplete} ref={optionsRef}>
           <ul>
-            {options.map((option) => (
+            {data.map((option) => (
               <li key={option._id} className={classes.optionItem}>
                 <button type="button" onClick={() => optionHandler(option._id)}>
                   {option._id}

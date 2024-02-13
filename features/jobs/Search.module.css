@@ -11,7 +11,7 @@
   flex: 1;
 }
 
-.controlGroup > *:not(:last-child) {
+.controlGroup > *:not(:last-child) input {
   border-right: 1px solid lightgray;
 }
 

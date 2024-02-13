@@ -2,21 +2,11 @@ import Link from "next/link";
 import { BiRightArrowAlt } from "react-icons/bi";
 
 import Section from "@/components/Section";
-import useSWR from "swr";
 import Container from "../components/Container";
 import Search from "../features/jobs/Search";
 import classes from "./Home.module.css";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
 const HomePage = () => {
-  const { data, error, isLoading } = useSWR("/api/jobs", fetcher);
-
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
-
-  console.log(data, isLoading);
-
   return (
     <>
       <Section className={classes.search}>
