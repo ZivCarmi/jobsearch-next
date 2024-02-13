@@ -13,7 +13,7 @@ const AutoComplete = ({
 }) => {
   const [inputValue, setInputValue] = useState("");
   const { data, error } = useSWR(
-    inputValue ? `/${requestUrl}?${name}=${inputValue}` : null,
+    inputValue ? `${requestUrl}?${name}=${inputValue}` : null,
     fetcher
   );
   const [isOptionsOpen, setIsOptionsOpen] = useState(true);
