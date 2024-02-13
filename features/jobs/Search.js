@@ -72,9 +72,11 @@ const Search = () => {
           }}
         />
       </div>
-      <button className={classes.searchBtn}>
-        <BiSearchAlt2 size="32px" />
-      </button>
+      <div className="p-2 self-center">
+        <button className={classes.searchBtn}>
+          <BiSearchAlt2 size="32px" />
+        </button>
+      </div>
       {errors.title && (
         <div className={errorClasses}>{errors.title?.message}</div>
       )}

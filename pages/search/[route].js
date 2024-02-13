@@ -2,8 +2,7 @@ import Section from "@/components/Section";
 import Container from "@/components/Container";
 import Jobs from "@/features/jobs/Jobs";
 import SearchTitle from "@/features/jobs/SearchTitle";
-import { getSearchedJobs } from "../api/search/[route]";
-
+import { getSearchedJobs } from "../api/jobs";
 import classes from "./Search.module.css";
 
 const SearchPage = ({ results }) => {

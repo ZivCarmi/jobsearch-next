@@ -1,5 +1,4 @@
 import { Overlay } from "./Modal";
-
 import classes from "./Spinner.module.css";
 
 const Spinner = ({ text, withOverlay, withOverlayAsBackground, dark }) => {

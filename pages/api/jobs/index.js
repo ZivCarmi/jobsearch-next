@@ -1,5 +1,4 @@
 import { Types } from "mongoose";
-
 import connectDb from "@/server/utils/connectDb";
 import Jobs from "@/models/Job";
 import Employers from "@/models/Employer";
@@ -90,9 +89,6 @@ export const getAllJobsWithApplyCondition = async (
 const getJobsByQuery = async (title, location) => {
   let aggregation = [];
 
-  console.log("in api/search/jobs-board");
-  console.log(title, location);
-
   if (title) {
     aggregation.push(
       { $match: { title: { $regex: title, $options: "i" } } },
@@ -107,16 +103,12 @@ const getJobsByQuery = async (title, location) => {
     );
   }
 
-  console.log(aggregation);
-
   aggregation.push({ $limit: 6 });
 
   try {
     await connectDb();
 
     const fetchedJobs = await Jobs.aggregate(aggregation);
-
-    console.log(fetchedJobs);
 
     return fetchedJobs;
   } catch (error) {
@@ -125,13 +117,35 @@ const getJobsByQuery = async (title, location) => {
   }
 };
 
+export const getSearchedJobs = async (headers, query) => {
+  const { uid, utype } = headers;
+  const { title, location } = query;
+  const page = parseInt(query.page) || 1;
+  const searchQuery = {};
+  let results;
+
+  if (title) {
+    searchQuery.title = { $regex: title, $options: "i" };
+  }
+
+  if (location) {
+    searchQuery.location = { $regex: location, $options: "i" };
+  }
+
+  if (utype === "seeker") {
+    results = await getAllJobsWithApplyCondition(uid, page, searchQuery);
+  } else {
+    results = await getAllJobs(page, searchQuery);
+  }
+
+  return results;
+};
+
 const handler = async (req, res) => {
   const { uid, utype } = req.headers;
   const { page, ids, title, location } = req.query;
   const requestedQuery = {};
   let results;
-
-  console.log("heree", req.query);
 
   if (req.method !== "GET") return res.status(405).end();
 

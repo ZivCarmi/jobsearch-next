@@ -2,15 +2,6 @@
   position: relative;
 }
 
-.input input:not([type="checkbox"]):not([type="radio"]) {
-  display: block;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: var(--input-fz);
-  padding: var(--input-y-padding) var(--input-x-padding);
-}
-
 .input:has([type="radio"]),
 .input:has([type="checkbox"]) {
   display: flex;

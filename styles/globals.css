@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --input-fz: 1.025rem;
   --input-x-padding: 0.7rem;

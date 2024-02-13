@@ -23,6 +23,8 @@ const handler = async (req, res) => {
   const { jobId } = req.query;
   const { uid } = req.headers;
 
+  console.log("in api/jobs/[jobId] route");
+
   if (!jobId) {
     return res.status(400).end();
   }
