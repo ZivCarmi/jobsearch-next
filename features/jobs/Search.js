@@ -1,9 +1,7 @@
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { BiSearchAlt2 } from "react-icons/bi";
-
 import AutoComplete from "../../components/AutoComplete";
-
 import classes from "./Search.module.css";
 
 const Search = () => {
@@ -54,7 +52,7 @@ const Search = () => {
     >
       <div className={classes.controlGroup}>
         <AutoComplete
-          requestUrl="/api/search/jobs-board"
+          requestUrl="/api/jobs"
           register={register}
           setValue={setValue}
           clearErrors={clearErrors}
@@ -64,7 +62,7 @@ const Search = () => {
           }}
         />
         <AutoComplete
-          requestUrl="/api/search/jobs-board"
+          requestUrl="/api/jobs"
           register={register}
           setValue={setValue}
           clearErrors={clearErrors}

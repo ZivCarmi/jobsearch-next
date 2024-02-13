@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { BiRightArrowAlt } from "react-icons/bi";
-
 import Section from "@/components/Section";
 import Container from "../components/Container";
 import Search from "../features/jobs/Search";

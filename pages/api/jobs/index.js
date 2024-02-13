@@ -87,32 +87,75 @@ export const getAllJobsWithApplyCondition = async (
   }
 };
 
+const getJobsByQuery = async (title, location) => {
+  let aggregation = [];
+
+  console.log("in api/search/jobs-board");
+  console.log(title, location);
+
+  if (title) {
+    aggregation.push(
+      { $match: { title: { $regex: title, $options: "i" } } },
+      { $group: { _id: `$title` } }
+    );
+  }
+
+  if (location) {
+    aggregation.push(
+      { $match: { location: { $regex: location, $options: "i" } } },
+      { $group: { _id: `$location` } }
+    );
+  }
+
+  console.log(aggregation);
+
+  aggregation.push({ $limit: 6 });
+
+  try {
+    await connectDb();
+
+    const fetchedJobs = await Jobs.aggregate(aggregation);
+
+    console.log(fetchedJobs);
+
+    return fetchedJobs;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 const handler = async (req, res) => {
   const { uid, utype } = req.headers;
+  const { page, ids, title, location } = req.query;
+  const requestedQuery = {};
+  let results;
 
-  console.log("heree");
+  console.log("heree", req.query);
 
-  if (req.method === "GET") {
-    const { page, ids } = req.query;
-    const requestedQuery = {};
-    let results;
+  if (req.method !== "GET") return res.status(405).end();
 
-    if (ids) {
-      const idsArray = ids.split(",");
-
-      requestedQuery._id = {
-        $in: idsArray.map((id) => new Types.ObjectId(id)),
-      };
-    }
-
-    if (utype === "seeker") {
-      results = await getAllJobsWithApplyCondition(uid, page);
-    } else {
-      results = await getAllJobs(page, requestedQuery);
-    }
+  if (title || location) {
+    results = await getJobsByQuery(title, location);
 
     return res.json(results);
   }
+
+  if (ids) {
+    const idsArray = ids.split(",");
+
+    requestedQuery._id = {
+      $in: idsArray.map((id) => new Types.ObjectId(id)),
+    };
+  }
+
+  if (utype === "seeker") {
+    results = await getAllJobsWithApplyCondition(uid, page);
+  } else {
+    results = await getAllJobs(page, requestedQuery);
+  }
+
+  return res.json(results);
 };
 
 export default handler;
