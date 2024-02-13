@@ -99,8 +99,12 @@ const middleware = async (request) => {
       },
     });
   } catch (error) {
+    console.log("in catch");
     if (request.method === "GET") {
+      console.log("in request get");
       if (pathname.startsWith("/api/jobs") || pathname.startsWith("/jobs")) {
+        console.log("passed, in /jobs if");
+
         return NextResponse.next();
       }
     }
