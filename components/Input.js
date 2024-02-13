@@ -20,6 +20,7 @@ const Input = forwardRef(
   ) => {
     const inputEl = (
       <input
+        ref={ref}
         type="text"
         className={cn(
           "block w-full border text-black border-slate-200 rounded-md px-3 py-2",
@@ -27,7 +28,6 @@ const Input = forwardRef(
         )}
         {...input}
         {...props}
-        ref={ref}
       />
     );
     let inputContainer = (
